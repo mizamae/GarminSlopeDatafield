@@ -3,6 +3,7 @@ using Toybox.Graphics;
 using Toybox.Math;
 
 const __NUMSAMPLES_AVGFILT__	=	5;
+const __METERS_TO_UPDATE__	=	5;
 
 class MovingAverage
 {
@@ -54,9 +55,8 @@ class SlopeView extends WatchUi.DataField {
     hidden var ElapsedDistance;
 	hidden var prevElapsedDistance;
     hidden var InstantSlope;
-    hidden var AverageSlope;
-    hidden var accumulated;
     hidden var filter;
+    hidden var DISTANCE2UPDATE;
     
     function initialize() {
         DataField.initialize();
@@ -64,11 +64,23 @@ class SlopeView extends WatchUi.DataField {
         prevAlt = -1000.0f;
         prevElapsedDistance = 0.0f;
         InstantSlope= 0.0f;
-        AverageSlope=0.0f;
-        accumulated=0;
+        var AVGFILT_SAMPLES = self.getParameter("AVGFILT_SAMPLES", __NUMSAMPLES_AVGFILT__);
+        DISTANCE2UPDATE = self.getParameter("DISTANCE2UPDATE", __METERS_TO_UPDATE__);
         self.filter=new MovingAverage( __NUMSAMPLES_AVGFILT__ );
     }
 	
+	function getParameter(paramName, defaultValue)
+	{
+	    var paramValue = Application.Properties.getValue(paramName);
+	    if (paramValue == null) {
+	      paramValue = defaultValue;
+	      Application.Properties.setValue(paramName, defaultValue);
+	    }
+	    
+	    if (paramValue == null) { return 0; }
+	    return paramValue;
+	}
+  
     // Set your layout here. Anytime the size of obscurity of
     // the draw context is changed this will be called.
     function onLayout(dc) {
@@ -120,11 +132,13 @@ class SlopeView extends WatchUi.DataField {
         	}
     	}else{ElapsedDistance=0.0f;}
         run=ElapsedDistance-prevElapsedDistance; // this is if elapsedDistance is measuring horizontal distance
-         
+        
         //theta=asin(rise/(ElapsedDistance-prevElapsedDistance));
         //run=(ElapsedDistance-prevElapsedDistance)*cos(theta); // this is if elapsedDistance is measuring inclined distance
         
-        prevElapsedDistance=ElapsedDistance;
+        if (run >= DISTANCE2UPDATE){
+        	prevElapsedDistance=ElapsedDistance;
+        }else{run=0;} 
         
         if (run>0){
         	InstantSlope=rise/run*100;
@@ -132,8 +146,6 @@ class SlopeView extends WatchUi.DataField {
         
         if (InstantSlope>100 or InstantSlope<-100){}
         else{
-        	AverageSlope=AverageSlope+InstantSlope;
-        	accumulated+=1;
         	self.filter.addSample(InstantSlope);
         }
 //        System.print("New value from sensor: Rise=");
@@ -155,15 +167,6 @@ class SlopeView extends WatchUi.DataField {
         } else {
             value.setColor(Graphics.COLOR_BLACK);
         }
-        
-//        System.print("Moving avg filter value: ");
-//        System.println(self.filter.getValue());
-        
-//        if (accumulated>=10)
-//        {	
-//        	value.setText((AverageSlope/accumulated).format("%.1f")+"%");
-//        	accumulated=0;
-//        }
         
 		value.setText(self.filter.getValue().format("%.1f")+"%");
 		

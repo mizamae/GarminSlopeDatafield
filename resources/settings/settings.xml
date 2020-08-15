@@ -1,0 +1,9 @@
+<settings>	
+	<setting propertyKey="@Properties.AVGFILT_SAMPLES" title="@Strings.AVGFILT_SAMPLES">
+    	<settingConfig type="numeric" min="4" max="10" />
+	</setting>
+ 
+	<setting propertyKey="@Properties.DISTANCE2UPDATE" title="@Strings.DISTANCE2UPDATE">
+    	<settingConfig type="numeric" min="1" max="10" />
+	</setting>
+</settings>

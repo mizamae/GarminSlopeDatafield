@@ -2,4 +2,7 @@
     <string id="AppName">Slope</string>
 
     <string id="label">My Value</string>
+    
+    <string id="AVGFILT_SAMPLES">Number of samples to perform the moving average filter</string>
+    <string id="DISTANCE2UPDATE">Meters elapsed to execute the slope calculation</string>
 </strings>
