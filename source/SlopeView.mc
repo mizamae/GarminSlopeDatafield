@@ -86,14 +86,20 @@ class SlopeView extends WatchUi.DataField {
     function onLayout(dc) {
         View.setLayout(Rez.Layouts.MainLayout(dc));
         var labelView = View.findDrawableById("label");
+        var valueView = View.findDrawableById("value");
+        
+        
         if (dc.getHeight() >= 89){
-            labelView.locY = labelView.locY - 30;}
-            else{
-            labelView.locY = labelView.locY - 20;
+            labelView.locY = labelView.locY - 30;
+            valueView.locY = valueView.locY + 7;
+            valueView.setFont(Graphics.FONT_NUMBER_HOT);
+        }
+        else{
+        	labelView.locY = labelView.locY - 20;
+        	valueView.locY = valueView.locY + 20;
+        	valueView.setFont(Graphics.FONT_NUMBER_MILD);
         }
         
-        var valueView = View.findDrawableById("value");
-        valueView.locY = valueView.locY + 7;
 
         View.findDrawableById("label").setText("Slope");
         View.findDrawableById("value").setText("---%");
@@ -159,15 +165,17 @@ class SlopeView extends WatchUi.DataField {
     function onUpdate(dc) {
         // Set the background color
         View.findDrawableById("Background").setColor(getBackgroundColor());
-
-        // Set the foreground color and value
         var value = View.findDrawableById("value");
-        if (getBackgroundColor() == Graphics.COLOR_BLACK) {
+        var label = View.findDrawableById("label");
+        
+        // Set the foreground color
+		if (getBackgroundColor() == Graphics.COLOR_BLACK) {
             value.setColor(Graphics.COLOR_WHITE);
+            label.setColor(Graphics.COLOR_WHITE);
         } else {
             value.setColor(Graphics.COLOR_BLACK);
+            label.setColor(Graphics.COLOR_BLACK);
         }
-        
 		value.setText(self.filter.getValue().format("%.1f")+"%");
 		
         // Call parent's onUpdate(dc) to redraw the layout
