@@ -1,0 +1,372 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<debugInfo>
+<pcToLineNum>
+<entry filename="C:\\Garmin APPs\\Slope\\source\\SlopeView.mc" id="3" lineNum="18" pc="268435456" symbol="initialize"/>
+<entry filename="C:\\Garmin APPs\\Slope\\source\\SlopeView.mc" id="3" lineNum="19" pc="268435460" symbol="initialize"/>
+<entry filename="C:\\Garmin APPs\\Slope\\source\\SlopeView.mc" id="3" lineNum="20" pc="268435470" symbol="initialize"/>
+<entry filename="C:\\Garmin APPs\\Slope\\source\\SlopeView.mc" id="3" lineNum="21" pc="268435483" symbol="initialize"/>
+<entry filename="C:\\Garmin APPs\\Slope\\source\\SlopeView.mc" id="3" lineNum="22" pc="268435500" symbol="initialize"/>
+<entry filename="C:\\Garmin APPs\\Slope\\source\\SlopeView.mc" id="3" lineNum="23" pc="268435521" symbol="initialize"/>
+<entry filename="C:\\Garmin APPs\\Slope\\source\\SlopeView.mc" id="3" lineNum="25" pc="268435550" symbol="initialize"/>
+<entry filename="C:\\Garmin APPs\\Slope\\source\\SlopeView.mc" id="4" lineNum="28" pc="268435564" symbol="add2Buffer"/>
+<entry filename="C:\\Garmin APPs\\Slope\\source\\SlopeView.mc" id="4" lineNum="30" pc="268435568" symbol="add2Buffer"/>
+<entry filename="C:\\Garmin APPs\\Slope\\source\\SlopeView.mc" id="4" lineNum="31" pc="268435595" symbol="add2Buffer"/>
+<entry filename="C:\\Garmin APPs\\Slope\\source\\SlopeView.mc" id="4" lineNum="33" pc="268435636" symbol="add2Buffer"/>
+<entry filename="C:\\Garmin APPs\\Slope\\source\\SlopeView.mc" id="4" lineNum="34" pc="268435661" symbol="add2Buffer"/>
+<entry filename="C:\\Garmin APPs\\Slope\\source\\SlopeView.mc" id="4" lineNum="35" pc="268435681" symbol="add2Buffer"/>
+<entry filename="C:\\Garmin APPs\\Slope\\source\\SlopeView.mc" id="5" lineNum="38" pc="268435704" symbol="addSample"/>
+<entry filename="C:\\Garmin APPs\\Slope\\source\\SlopeView.mc" id="5" lineNum="40" pc="268435708" symbol="addSample"/>
+<entry filename="C:\\Garmin APPs\\Slope\\source\\SlopeView.mc" id="5" lineNum="41" pc="268435754" symbol="addSample"/>
+<entry filename="C:\\Garmin APPs\\Slope\\source\\SlopeView.mc" id="5" lineNum="42" pc="268435768" symbol="addSample"/>
+<entry filename="C:\\Garmin APPs\\Slope\\source\\SlopeView.mc" id="5" lineNum="43" pc="268435791" symbol="addSample"/>
+<entry filename="C:\\Garmin APPs\\Slope\\source\\SlopeView.mc" id="5" lineNum="44" pc="268435811" symbol="addSample"/>
+<entry filename="C:\\Garmin APPs\\Slope\\source\\SlopeView.mc" id="5" lineNum="45" pc="268435834" symbol="addSample"/>
+<entry filename="C:\\Garmin APPs\\Slope\\source\\SlopeView.mc" id="6" lineNum="48" pc="268435861" symbol="getValue"/>
+<entry filename="C:\\Garmin APPs\\Slope\\source\\SlopeView.mc" id="6" lineNum="49" pc="268435865" symbol="getValue"/>
+<entry filename="C:\\Garmin APPs\\Slope\\source\\SlopeView.mc" id="8" lineNum="77" pc="268435875" symbol="initialize"/>
+<entry filename="C:\\Garmin APPs\\Slope\\source\\SlopeView.mc" id="8" lineNum="78" pc="268435879" symbol="initialize"/>
+<entry filename="C:\\Garmin APPs\\Slope\\source\\SlopeView.mc" id="8" lineNum="79" pc="268435897" symbol="initialize"/>
+<entry filename="C:\\Garmin APPs\\Slope\\source\\SlopeView.mc" id="8" lineNum="80" pc="268435910" symbol="initialize"/>
+<entry filename="C:\\Garmin APPs\\Slope\\source\\SlopeView.mc" id="8" lineNum="81" pc="268435923" symbol="initialize"/>
+<entry filename="C:\\Garmin APPs\\Slope\\source\\SlopeView.mc" id="8" lineNum="82" pc="268435936" symbol="initialize"/>
+<entry filename="C:\\Garmin APPs\\Slope\\source\\SlopeView.mc" id="8" lineNum="83" pc="268435949" symbol="initialize"/>
+<entry filename="C:\\Garmin APPs\\Slope\\source\\SlopeView.mc" id="8" lineNum="84" pc="268435962" symbol="initialize"/>
+<entry filename="C:\\Garmin APPs\\Slope\\source\\SlopeView.mc" id="8" lineNum="86" pc="268435975" symbol="initialize"/>
+<entry filename="C:\\Garmin APPs\\Slope\\source\\SlopeView.mc" id="8" lineNum="87" pc="268436001" symbol="initialize"/>
+<entry filename="C:\\Garmin APPs\\Slope\\source\\SlopeView.mc" id="8" lineNum="88" pc="268436033" symbol="initialize"/>
+<entry filename="C:\\Garmin APPs\\Slope\\source\\SlopeView.mc" id="8" lineNum="90" pc="268436071" symbol="initialize"/>
+<entry filename="C:\\Garmin APPs\\Slope\\source\\SlopeView.mc" id="8" lineNum="91" pc="268436081" symbol="initialize"/>
+<entry filename="C:\\Garmin APPs\\Slope\\source\\SlopeView.mc" id="8" lineNum="92" pc="268436091" symbol="initialize"/>
+<entry filename="C:\\Garmin APPs\\Slope\\source\\SlopeView.mc" id="8" lineNum="95" pc="268436101" symbol="initialize"/>
+<entry filename="C:\\Garmin APPs\\Slope\\source\\SlopeView.mc" id="9" lineNum="98" pc="268436185" symbol="getParameter"/>
+<entry filename="C:\\Garmin APPs\\Slope\\source\\SlopeView.mc" id="9" lineNum="100" pc="268436189" symbol="getParameter"/>
+<entry filename="C:\\Garmin APPs\\Slope\\source\\SlopeView.mc" id="9" lineNum="101" pc="268436216" symbol="getParameter"/>
+<entry filename="C:\\Garmin APPs\\Slope\\source\\SlopeView.mc" id="9" lineNum="102" pc="268436223" symbol="getParameter"/>
+<entry filename="C:\\Garmin APPs\\Slope\\source\\SlopeView.mc" id="9" lineNum="103" pc="268436227" symbol="getParameter"/>
+<entry filename="C:\\Garmin APPs\\Slope\\source\\SlopeView.mc" id="9" lineNum="106" pc="268436258" symbol="getParameter"/>
+<entry filename="C:\\Garmin APPs\\Slope\\source\\SlopeView.mc" id="9" lineNum="106" pc="268436265" symbol="getParameter"/>
+<entry filename="C:\\Garmin APPs\\Slope\\source\\SlopeView.mc" id="9" lineNum="107" pc="268436274" symbol="getParameter"/>
+<entry filename="C:\\Garmin APPs\\Slope\\source\\SlopeView.mc" id="10" lineNum="112" pc="268436278" symbol="onLayout"/>
+<entry filename="C:\\Garmin APPs\\Slope\\source\\SlopeView.mc" id="10" lineNum="113" pc="268436282" symbol="onLayout"/>
+<entry filename="C:\\Garmin APPs\\Slope\\source\\SlopeView.mc" id="10" lineNum="114" pc="268436325" symbol="onLayout"/>
+<entry filename="C:\\Garmin APPs\\Slope\\source\\SlopeView.mc" id="10" lineNum="115" pc="268436349" symbol="onLayout"/>
+<entry filename="C:\\Garmin APPs\\Slope\\source\\SlopeView.mc" id="10" lineNum="118" pc="268436373" symbol="onLayout"/>
+<entry filename="C:\\Garmin APPs\\Slope\\source\\SlopeView.mc" id="10" lineNum="119" pc="268436393" symbol="onLayout"/>
+<entry filename="C:\\Garmin APPs\\Slope\\source\\SlopeView.mc" id="10" lineNum="120" pc="268436415" symbol="onLayout"/>
+<entry filename="C:\\Garmin APPs\\Slope\\source\\SlopeView.mc" id="10" lineNum="121" pc="268436437" symbol="onLayout"/>
+<entry filename="C:\\Garmin APPs\\Slope\\source\\SlopeView.mc" id="10" lineNum="124" pc="268436464" symbol="onLayout"/>
+<entry filename="C:\\Garmin APPs\\Slope\\source\\SlopeView.mc" id="10" lineNum="125" pc="268436486" symbol="onLayout"/>
+<entry filename="C:\\Garmin APPs\\Slope\\source\\SlopeView.mc" id="10" lineNum="126" pc="268436508" symbol="onLayout"/>
+<entry filename="C:\\Garmin APPs\\Slope\\source\\SlopeView.mc" id="10" lineNum="130" pc="268436532" symbol="onLayout"/>
+<entry filename="C:\\Garmin APPs\\Slope\\source\\SlopeView.mc" id="10" lineNum="131" pc="268436569" symbol="onLayout"/>
+<entry filename="C:\\Garmin APPs\\Slope\\source\\SlopeView.mc" id="10" lineNum="132" pc="268436606" symbol="onLayout"/>
+<entry filename="C:\\Garmin APPs\\Slope\\source\\SlopeView.mc" id="11" lineNum="139" pc="268436610" symbol="compute"/>
+<entry filename="C:\\Garmin APPs\\Slope\\source\\SlopeView.mc" id="11" lineNum="140" pc="268436614" symbol="compute"/>
+<entry filename="C:\\Garmin APPs\\Slope\\source\\SlopeView.mc" id="11" lineNum="141" pc="268436621" symbol="compute"/>
+<entry filename="C:\\Garmin APPs\\Slope\\source\\SlopeView.mc" id="11" lineNum="142" pc="268436628" symbol="compute"/>
+<entry filename="C:\\Garmin APPs\\Slope\\source\\SlopeView.mc" id="11" lineNum="143" pc="268436635" symbol="compute"/>
+<entry filename="C:\\Garmin APPs\\Slope\\source\\SlopeView.mc" id="11" lineNum="144" pc="268436642" symbol="compute"/>
+<entry filename="C:\\Garmin APPs\\Slope\\source\\SlopeView.mc" id="11" lineNum="146" pc="268436649" symbol="compute"/>
+<entry filename="C:\\Garmin APPs\\Slope\\source\\SlopeView.mc" id="11" lineNum="147" pc="268436659" symbol="compute"/>
+<entry filename="C:\\Garmin APPs\\Slope\\source\\SlopeView.mc" id="11" lineNum="149" pc="268436669" symbol="compute"/>
+<entry filename="C:\\Garmin APPs\\Slope\\source\\SlopeView.mc" id="11" lineNum="150" pc="268436680" symbol="compute"/>
+<entry filename="C:\\Garmin APPs\\Slope\\source\\SlopeView.mc" id="11" lineNum="151" pc="268436693" symbol="compute"/>
+<entry filename="C:\\Garmin APPs\\Slope\\source\\SlopeView.mc" id="11" lineNum="152" pc="268436717" symbol="compute"/>
+<entry filename="C:\\Garmin APPs\\Slope\\source\\SlopeView.mc" id="11" lineNum="153" pc="268436736" symbol="compute"/>
+<entry filename="C:\\Garmin APPs\\Slope\\source\\SlopeView.mc" id="11" lineNum="154" pc="268436760" symbol="compute"/>
+<entry filename="C:\\Garmin APPs\\Slope\\source\\SlopeView.mc" id="11" lineNum="156" pc="268436779" symbol="compute"/>
+<entry filename="C:\\Garmin APPs\\Slope\\source\\SlopeView.mc" id="11" lineNum="157" pc="268436795" symbol="compute"/>
+<entry filename="C:\\Garmin APPs\\Slope\\source\\SlopeView.mc" id="11" lineNum="160" pc="268436808" symbol="compute"/>
+<entry filename="C:\\Garmin APPs\\Slope\\source\\SlopeView.mc" id="11" lineNum="161" pc="268436824" symbol="compute"/>
+<entry filename="C:\\Garmin APPs\\Slope\\source\\SlopeView.mc" id="11" lineNum="164" pc="268436837" symbol="compute"/>
+<entry filename="C:\\Garmin APPs\\Slope\\source\\SlopeView.mc" id="11" lineNum="165" pc="268436853" symbol="compute"/>
+<entry filename="C:\\Garmin APPs\\Slope\\source\\SlopeView.mc" id="11" lineNum="168" pc="268436863" symbol="compute"/>
+<entry filename="C:\\Garmin APPs\\Slope\\source\\SlopeView.mc" id="11" lineNum="169" pc="268436874" symbol="compute"/>
+<entry filename="C:\\Garmin APPs\\Slope\\source\\SlopeView.mc" id="11" lineNum="169" pc="268436887" symbol="compute"/>
+<entry filename="C:\\Garmin APPs\\Slope\\source\\SlopeView.mc" id="11" lineNum="170" pc="268436906" symbol="compute"/>
+<entry filename="C:\\Garmin APPs\\Slope\\source\\SlopeView.mc" id="11" lineNum="171" pc="268436916" symbol="compute"/>
+<entry filename="C:\\Garmin APPs\\Slope\\source\\SlopeView.mc" id="11" lineNum="173" pc="268436923" symbol="compute"/>
+<entry filename="C:\\Garmin APPs\\Slope\\source\\SlopeView.mc" id="11" lineNum="174" pc="268436934" symbol="compute"/>
+<entry filename="C:\\Garmin APPs\\Slope\\source\\SlopeView.mc" id="11" lineNum="175" pc="268436947" symbol="compute"/>
+<entry filename="C:\\Garmin APPs\\Slope\\source\\SlopeView.mc" id="11" lineNum="177" pc="268436966" symbol="compute"/>
+<entry filename="C:\\Garmin APPs\\Slope\\source\\SlopeView.mc" id="11" lineNum="178" pc="268436979" symbol="compute"/>
+<entry filename="C:\\Garmin APPs\\Slope\\source\\SlopeView.mc" id="11" lineNum="181" pc="268436992" symbol="compute"/>
+<entry filename="C:\\Garmin APPs\\Slope\\source\\SlopeView.mc" id="11" lineNum="182" pc="268437005" symbol="compute"/>
+<entry filename="C:\\Garmin APPs\\Slope\\source\\SlopeView.mc" id="11" lineNum="184" pc="268437015" symbol="compute"/>
+<entry filename="C:\\Garmin APPs\\Slope\\source\\SlopeView.mc" id="11" lineNum="186" pc="268437034" symbol="compute"/>
+<entry filename="C:\\Garmin APPs\\Slope\\source\\SlopeView.mc" id="11" lineNum="186" pc="268437045" symbol="compute"/>
+<entry filename="C:\\Garmin APPs\\Slope\\source\\SlopeView.mc" id="11" lineNum="191" pc="268437058" symbol="compute"/>
+<entry filename="C:\\Garmin APPs\\Slope\\source\\SlopeView.mc" id="11" lineNum="192" pc="268437069" symbol="compute"/>
+<entry filename="C:\\Garmin APPs\\Slope\\source\\SlopeView.mc" id="11" lineNum="193" pc="268437080" symbol="compute"/>
+<entry filename="C:\\Garmin APPs\\Slope\\source\\SlopeView.mc" id="11" lineNum="194" pc="268437093" symbol="compute"/>
+<entry filename="C:\\Garmin APPs\\Slope\\source\\SlopeView.mc" id="11" lineNum="196" pc="268437112" symbol="compute"/>
+<entry filename="C:\\Garmin APPs\\Slope\\source\\SlopeView.mc" id="11" lineNum="197" pc="268437128" symbol="compute"/>
+<entry filename="C:\\Garmin APPs\\Slope\\source\\SlopeView.mc" id="11" lineNum="200" pc="268437141" symbol="compute"/>
+<entry filename="C:\\Garmin APPs\\Slope\\source\\SlopeView.mc" id="11" lineNum="201" pc="268437157" symbol="compute"/>
+<entry filename="C:\\Garmin APPs\\Slope\\source\\SlopeView.mc" id="11" lineNum="204" pc="268437167" symbol="compute"/>
+<entry filename="C:\\Garmin APPs\\Slope\\source\\SlopeView.mc" id="11" lineNum="205" pc="268437184" symbol="compute"/>
+<entry filename="C:\\Garmin APPs\\Slope\\source\\SlopeView.mc" id="11" lineNum="207" pc="268437206" symbol="compute"/>
+<entry filename="C:\\Garmin APPs\\Slope\\source\\SlopeView.mc" id="11" lineNum="210" pc="268437213" symbol="compute"/>
+<entry filename="C:\\Garmin APPs\\Slope\\source\\SlopeView.mc" id="11" lineNum="211" pc="268437241" symbol="compute"/>
+<entry filename="C:\\Garmin APPs\\Slope\\source\\SlopeView.mc" id="11" lineNum="212" pc="268437251" symbol="compute"/>
+<entry filename="C:\\Garmin APPs\\Slope\\source\\SlopeView.mc" id="11" lineNum="213" pc="268437277" symbol="compute"/>
+<entry filename="C:\\Garmin APPs\\Slope\\source\\SlopeView.mc" id="11" lineNum="214" pc="268437325" symbol="compute"/>
+<entry filename="C:\\Garmin APPs\\Slope\\source\\SlopeView.mc" id="11" lineNum="215" pc="268437335" symbol="compute"/>
+<entry filename="C:\\Garmin APPs\\Slope\\source\\SlopeView.mc" id="11" lineNum="216" pc="268437361" symbol="compute"/>
+<entry filename="C:\\Garmin APPs\\Slope\\source\\SlopeView.mc" id="11" lineNum="219" pc="268437371" symbol="compute"/>
+<entry filename="C:\\Garmin APPs\\Slope\\source\\SlopeView.mc" id="11" lineNum="220" pc="268437396" symbol="compute"/>
+<entry filename="C:\\Garmin APPs\\Slope\\source\\SlopeView.mc" id="11" lineNum="221" pc="268437425" symbol="compute"/>
+<entry filename="C:\\Garmin APPs\\Slope\\source\\SlopeView.mc" id="11" lineNum="222" pc="268437454" symbol="compute"/>
+<entry filename="C:\\Garmin APPs\\Slope\\source\\SlopeView.mc" id="11" lineNum="223" pc="268437473" symbol="compute"/>
+<entry filename="C:\\Garmin APPs\\Slope\\source\\SlopeView.mc" id="11" lineNum="224" pc="268437486" symbol="compute"/>
+<entry filename="C:\\Garmin APPs\\Slope\\source\\SlopeView.mc" id="11" lineNum="225" pc="268437515" symbol="compute"/>
+<entry filename="C:\\Garmin APPs\\Slope\\source\\SlopeView.mc" id="11" lineNum="226" pc="268437540" symbol="compute"/>
+<entry filename="C:\\Garmin APPs\\Slope\\source\\SlopeView.mc" id="11" lineNum="228" pc="268437553" symbol="compute"/>
+<entry filename="C:\\Garmin APPs\\Slope\\source\\SlopeView.mc" id="11" lineNum="229" pc="268437560" symbol="compute"/>
+<entry filename="C:\\Garmin APPs\\Slope\\source\\SlopeView.mc" id="11" lineNum="235" pc="268437576" symbol="compute"/>
+<entry filename="C:\\Garmin APPs\\Slope\\source\\SlopeView.mc" id="11" lineNum="235" pc="268437587" symbol="compute"/>
+<entry filename="C:\\Garmin APPs\\Slope\\source\\SlopeView.mc" id="11" lineNum="236" pc="268437603" symbol="compute"/>
+<entry filename="C:\\Garmin APPs\\Slope\\source\\SlopeView.mc" id="11" lineNum="237" pc="268437614" symbol="compute"/>
+<entry filename="C:\\Garmin APPs\\Slope\\source\\SlopeView.mc" id="11" lineNum="238" pc="268437621" symbol="compute"/>
+<entry filename="C:\\Garmin APPs\\Slope\\source\\SlopeView.mc" id="11" lineNum="242" pc="268437634" symbol="compute"/>
+<entry filename="C:\\Garmin APPs\\Slope\\source\\SlopeView.mc" id="11" lineNum="243" pc="268437659" symbol="compute"/>
+<entry filename="C:\\Garmin APPs\\Slope\\source\\SlopeView.mc" id="11" lineNum="244" pc="268437679" symbol="compute"/>
+<entry filename="C:\\Garmin APPs\\Slope\\source\\SlopeView.mc" id="11" lineNum="245" pc="268437695" symbol="compute"/>
+<entry filename="C:\\Garmin APPs\\Slope\\source\\SlopeView.mc" id="11" lineNum="246" pc="268437711" symbol="compute"/>
+<entry filename="C:\\Garmin APPs\\Slope\\source\\SlopeView.mc" id="11" lineNum="247" pc="268437727" symbol="compute"/>
+<entry filename="C:\\Garmin APPs\\Slope\\source\\SlopeView.mc" id="11" lineNum="248" pc="268437743" symbol="compute"/>
+<entry filename="C:\\Garmin APPs\\Slope\\source\\SlopeView.mc" id="11" lineNum="249" pc="268437766" symbol="compute"/>
+<entry filename="C:\\Garmin APPs\\Slope\\source\\SlopeView.mc" id="11" lineNum="250" pc="268437786" symbol="compute"/>
+<entry filename="C:\\Garmin APPs\\Slope\\source\\SlopeView.mc" id="11" lineNum="251" pc="268437809" symbol="compute"/>
+<entry filename="C:\\Garmin APPs\\Slope\\source\\SlopeView.mc" id="12" lineNum="261" pc="268437833" symbol="onUpdate"/>
+<entry filename="C:\\Garmin APPs\\Slope\\source\\SlopeView.mc" id="12" lineNum="263" pc="268437837" symbol="onUpdate"/>
+<entry filename="C:\\Garmin APPs\\Slope\\source\\SlopeView.mc" id="12" lineNum="264" pc="268437880" symbol="onUpdate"/>
+<entry filename="C:\\Garmin APPs\\Slope\\source\\SlopeView.mc" id="12" lineNum="265" pc="268437904" symbol="onUpdate"/>
+<entry filename="C:\\Garmin APPs\\Slope\\source\\SlopeView.mc" id="12" lineNum="268" pc="268437928" symbol="onUpdate"/>
+<entry filename="C:\\Garmin APPs\\Slope\\source\\SlopeView.mc" id="12" lineNum="269" pc="268437955" symbol="onUpdate"/>
+<entry filename="C:\\Garmin APPs\\Slope\\source\\SlopeView.mc" id="12" lineNum="270" pc="268437979" symbol="onUpdate"/>
+<entry filename="C:\\Garmin APPs\\Slope\\source\\SlopeView.mc" id="12" lineNum="272" pc="268438006" symbol="onUpdate"/>
+<entry filename="C:\\Garmin APPs\\Slope\\source\\SlopeView.mc" id="12" lineNum="273" pc="268438030" symbol="onUpdate"/>
+<entry filename="C:\\Garmin APPs\\Slope\\source\\SlopeView.mc" id="12" lineNum="275" pc="268438054" symbol="onUpdate"/>
+<entry filename="C:\\Garmin APPs\\Slope\\source\\SlopeView.mc" id="12" lineNum="276" pc="268438073" symbol="onUpdate"/>
+<entry filename="C:\\Garmin APPs\\Slope\\source\\SlopeView.mc" id="12" lineNum="277" pc="268438107" symbol="onUpdate"/>
+<entry filename="C:\\Garmin APPs\\Slope\\source\\SlopeView.mc" id="12" lineNum="280" pc="268438127" symbol="onUpdate"/>
+<entry filename="C:\\Garmin APPs\\Slope\\source\\SlopeBackground.mc" id="14" lineNum="9" pc="268438148" symbol="initialize"/>
+<entry filename="C:\\Garmin APPs\\Slope\\source\\SlopeBackground.mc" id="14" lineNum="10" pc="268438152" symbol="initialize"/>
+<entry filename="C:\\Garmin APPs\\Slope\\source\\SlopeBackground.mc" id="14" lineNum="14" pc="268438173" symbol="initialize"/>
+<entry filename="C:\\Garmin APPs\\Slope\\source\\SlopeBackground.mc" id="15" lineNum="17" pc="268438194" symbol="setColor"/>
+<entry filename="C:\\Garmin APPs\\Slope\\source\\SlopeBackground.mc" id="15" lineNum="18" pc="268438198" symbol="setColor"/>
+<entry filename="C:\\Garmin APPs\\Slope\\source\\SlopeBackground.mc" id="16" lineNum="21" pc="268438209" symbol="draw"/>
+<entry filename="C:\\Garmin APPs\\Slope\\source\\SlopeBackground.mc" id="16" lineNum="22" pc="268438213" symbol="draw"/>
+<entry filename="C:\\Garmin APPs\\Slope\\source\\SlopeBackground.mc" id="16" lineNum="23" pc="268438245" symbol="draw"/>
+<entry filename="C:\\Garmin APPs\\Slope\\source\\SlopeApp.mc" id="18" lineNum="5" pc="268438258" symbol="initialize"/>
+<entry filename="C:\\Garmin APPs\\Slope\\source\\SlopeApp.mc" id="18" lineNum="6" pc="268438262" symbol="initialize"/>
+<entry filename="C:\\Garmin APPs\\Slope\\source\\SlopeApp.mc" id="19" lineNum="10" pc="268438281" symbol="onStart"/>
+<entry filename="C:\\Garmin APPs\\Slope\\source\\SlopeApp.mc" id="20" lineNum="14" pc="268438286" symbol="onStop"/>
+<entry filename="C:\\Garmin APPs\\Slope\\source\\SlopeApp.mc" id="21" lineNum="18" pc="268438291" symbol="getInitialView"/>
+<entry filename="C:\\Garmin APPs\\Slope\\source\\SlopeApp.mc" id="21" lineNum="19" pc="268438295" symbol="getInitialView"/>
+<entry filename="Rez" id="27" lineNum="15" pc="268438333" symbol="MainLayout"/>
+<entry filename="Rez" id="27" lineNum="17" pc="268438345" symbol="MainLayout"/>
+<entry filename="Rez" id="27" lineNum="18" pc="268438358" symbol="MainLayout"/>
+<entry filename="Rez" id="27" lineNum="20" pc="268438371" symbol="MainLayout"/>
+<entry filename="Rez" id="27" lineNum="21" pc="268438395" symbol="MainLayout"/>
+<entry filename="Rez" id="27" lineNum="22" pc="268438558" symbol="MainLayout"/>
+<entry filename="Rez" id="27" lineNum="24" pc="268438721" symbol="MainLayout"/>
+</pcToLineNum>
+<symbolTable>
+<entry id="11" object="true" symbol="MovingAverage"/>
+<entry id="8389124" method="true" symbol="onUpdate"/>
+<entry id="8389349" symbol="justification"/>
+<entry field="true" id="16" symbol="buffer"/>
+<entry id="8389629" method="true" symbol="getValue"/>
+<entry id="12" object="true" symbol="SlopeView"/>
+<entry field="true" id="40" symbol="prevTotalAscent"/>
+<entry field="true" id="8388611" module="true" symbol="Toybox"/>
+<entry id="8388770" module="true" object="true" symbol="Strings"/>
+<entry field="true" id="8389138" symbol="label"/>
+<entry id="8389280" method="true" symbol="getInitialView"/>
+<entry id="8389068" method="true" symbol="draw"/>
+<entry id="8389849" symbol="units"/>
+<entry field="true" id="28" symbol="AVGFILT_SAMPLES"/>
+<entry id="8388639" module="true" symbol="Graphics"/>
+<entry id="23" method="true" symbol="MainLayout"/>
+<entry field="true" id="10" symbol="__METERS_TO_UPDATE__"/>
+<entry id="8388769" module="true" object="true" symbol="Rez"/>
+<entry field="true" id="24" symbol="slope_graph_label"/>
+<entry id="13" object="true" symbol="SlopeApp"/>
+<entry field="true" id="32" symbol="ElapsedDistance"/>
+<entry field="true" id="8388745" symbol="totalAscent"/>
+<entry field="true" id="8389130" symbol="mColor"/>
+<entry id="18" method="true" symbol="add2Buffer"/>
+<entry id="8389131" method="true" symbol="setColor"/>
+<entry id="8388702" method="true" symbol="initialize"/>
+<entry field="true" id="30" symbol="currAlt"/>
+<entry field="true" id="29" symbol="AppName"/>
+<entry field="true" id="37" symbol="flagRiseWithAltitude"/>
+<entry field="true" id="15" symbol="accumulator"/>
+<entry id="8390146" module="true" object="true" symbol="Background"/>
+<entry field="true" id="46" symbol="mSlopeField"/>
+<entry id="8388641" module="true" symbol="Math"/>
+<entry field="true" id="22" symbol="LauncherIcon"/>
+<entry field="true" id="42" symbol="NO_GPS_DATA"/>
+<entry field="true" id="34" symbol="filter"/>
+<entry field="true" id="27" symbol="slope_label"/>
+<entry id="8388648" module="true" symbol="WatchUi"/>
+<entry id="8389281" method="true" symbol="onStop"/>
+<entry field="true" id="43" symbol="GPS_POOR"/>
+<entry field="true" id="36" symbol="gpsQuality"/>
+<entry field="true" id="26" symbol="slope_units"/>
+<entry field="true" id="8389065" symbol="locY"/>
+<entry field="true" id="8389064" symbol="locX"/>
+<entry id="8388771" module="true" object="true" symbol="Drawables"/>
+<entry field="true" id="31" symbol="prevAlt"/>
+<entry id="8389137" method="true" symbol="compute"/>
+<entry field="true" id="41" symbol="prevTotalDescent"/>
+<entry id="8389122" method="true" symbol="onLayout"/>
+<entry field="true" id="8388963" symbol="altitude"/>
+<entry id="8389279" method="true" symbol="onStart"/>
+<entry field="true" id="8388738" symbol="currentSpeed"/>
+<entry field="true" id="8388734" symbol="elapsedDistance"/>
+<entry id="8389348" symbol="font"/>
+<entry id="8389347" symbol="color"/>
+<entry id="19" method="true" symbol="addSample"/>
+<entry field="true" id="38" symbol="flagInsertNewValueToFilter"/>
+<entry field="true" id="33" symbol="prevElapsedDistance"/>
+<entry field="true" id="45" symbol="SLOPE_FIELD_ID"/>
+<entry field="true" id="8388746" symbol="totalDescent"/>
+<entry id="20" module="true" symbol="Layouts"/>
+<entry id="47" method="true" symbol="getParameter"/>
+<entry id="8388642" module="true" symbol="Position"/>
+<entry id="8390088" module="true" object="true" symbol="JsonData"/>
+<entry id="8389780" module="true" symbol="FitContributor"/>
+<entry field="true" id="44" symbol="GPS_GOOD"/>
+<entry field="true" id="8389063" symbol="identifier"/>
+<entry field="true" id="35" symbol="deltaRise"/>
+<entry field="true" id="8388735" symbol="currentLocationAccuracy"/>
+<entry id="21" module="true" symbol="Menus"/>
+<entry field="true" id="25" symbol="DISTANCE2UPDATE"/>
+<entry field="true" id="39" symbol="flagGoodData"/>
+<entry id="8389847" symbol="mesgType"/>
+<entry id="8388772" module="true" object="true" symbol="Fonts"/>
+<entry field="true" id="17" symbol="SamplesInBuffer"/>
+<entry id="8388635" module="true" symbol="Application"/>
+<entry field="true" id="14" symbol="samples"/>
+<entry field="true" id="9" symbol="__NUMSAMPLES_AVGFILT__"/>
+</symbolTable>
+<localVars>
+<entry endPc="268435550" name="i" stackId="2" startPc="268435521"/>
+<entry endPc="268435564" name="NumSamples" stackId="1" startPc="268435456"/>
+<entry endPc="268435636" name="i" stackId="2" startPc="268435595"/>
+<entry endPc="268435704" name="value" stackId="1" startPc="268435564"/>
+<entry endPc="268435861" name="value" stackId="1" startPc="268435704"/>
+<entry endPc="268436184" name="AVGFILT_SAMPLES" stackId="1" startPc="268435879"/>
+<entry endPc="268436277" name="paramValue" stackId="3" startPc="268436189"/>
+<entry endPc="268436278" name="defaultValue" stackId="2" startPc="268436185"/>
+<entry endPc="268436278" name="paramName" stackId="1" startPc="268436185"/>
+<entry endPc="268436609" name="valueView" stackId="3" startPc="268436282"/>
+<entry endPc="268436609" name="labelView" stackId="2" startPc="268436282"/>
+<entry endPc="268436610" name="dc" stackId="1" startPc="268436278"/>
+<entry endPc="268437832" name="InstantSlope" stackId="6" startPc="268436614"/>
+<entry endPc="268437832" name="rise" stackId="3" startPc="268436614"/>
+<entry endPc="268437832" name="theta" stackId="2" startPc="268436614"/>
+<entry endPc="268437832" name="speed" stackId="5" startPc="268436614"/>
+<entry endPc="268437832" name="run" stackId="4" startPc="268436614"/>
+<entry endPc="268437833" name="info" stackId="1" startPc="268436610"/>
+<entry endPc="268438147" name="filter_read" stackId="4" startPc="268437837"/>
+<entry endPc="268438147" name="label" stackId="3" startPc="268437837"/>
+<entry endPc="268438147" name="value" stackId="2" startPc="268437837"/>
+<entry endPc="268438148" name="dc" stackId="1" startPc="268437833"/>
+<entry endPc="268438193" name="dictionary" stackId="1" startPc="268438152"/>
+<entry endPc="268438209" name="color" stackId="1" startPc="268438194"/>
+<entry endPc="268438258" name="dc" stackId="1" startPc="268438209"/>
+<entry endPc="268438286" name="state" stackId="1" startPc="268438281"/>
+<entry endPc="268438291" name="state" stackId="1" startPc="268438286"/>
+<entry endPc="268438758" name="rez_cmp_local_text_value" stackId="6" startPc="268438345"/>
+<entry endPc="268438758" name="rez_cmp_local_var_dc_getWidth" stackId="3" startPc="268438345"/>
+<entry endPc="268438758" name="rez_cmp_local_var_dc_getHeight" stackId="2" startPc="268438345"/>
+<entry endPc="268438758" name="rez_cmp_local_text_label" stackId="5" startPc="268438345"/>
+<entry endPc="268438758" name="rez_cmp_local_custom_drawable_16532469455123253321" stackId="4" startPc="268438345"/>
+<entry endPc="268438759" name="dc" stackId="1" startPc="268438333"/>
+</localVars>
+<annotations/>
+<dataEntryOffsetMappings>
+<dataEntry offset="87" parentId="" symbolId="globals" type="module"/>
+<dataEntry offset="182" parentId="globals" symbolId="SlopeApp" type="class"/>
+<dataEntry offset="253" parentId="globals" symbolId="Background" type="class"/>
+<dataEntry offset="324" parentId="globals" symbolId="MovingAverage" type="class"/>
+<dataEntry offset="427" parentId="globals" symbolId="Rez" type="module"/>
+<dataEntry offset="506" parentId="Rez" symbolId="Drawables" type="module"/>
+<dataEntry offset="545" parentId="Rez" symbolId="Menus" type="module"/>
+<dataEntry offset="576" parentId="Rez" symbolId="Fonts" type="module"/>
+<dataEntry offset="607" parentId="Rez" symbolId="Layouts" type="module"/>
+<dataEntry offset="646" parentId="Rez" symbolId="JsonData" type="module"/>
+<dataEntry offset="677" parentId="Rez" symbolId="Strings" type="module"/>
+<dataEntry offset="764" parentId="globals" symbolId="SlopeView" type="class"/>
+</dataEntryOffsetMappings>
+<functions>
+<functionEntry accessMode="public" name="initialize" parent="MovingAverage">
+<param id="NumSamples"/>
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" name="add2Buffer" parent="MovingAverage">
+<param id="value"/>
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" name="addSample" parent="MovingAverage">
+<param id="value"/>
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" name="getValue" parent="MovingAverage">
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" name="initialize" parent="SlopeView">
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" name="getParameter" parent="SlopeView">
+<param id="paramName"/>
+<param id="defaultValue"/>
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" name="onLayout" parent="SlopeView">
+<param id="dc"/>
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" name="compute" parent="SlopeView">
+<param id="info"/>
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" name="onUpdate" parent="SlopeView">
+<param id="dc"/>
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" name="initialize" parent="Background">
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" name="setColor" parent="Background">
+<param id="color"/>
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" name="draw" parent="Background">
+<param id="dc"/>
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" name="initialize" parent="SlopeApp">
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" name="onStart" parent="SlopeApp">
+<param id="state"/>
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" name="onStop" parent="SlopeApp">
+<param id="state"/>
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" name="getInitialView" parent="SlopeApp">
+<documentation><![CDATA[<div class="description"> Return the initial view of your application here<br/></div>]]></documentation>
+</functionEntry>
+<functionEntry accessMode="public" name="MainLayout" parent="Layouts">
+<param id="dc"/>
+<documentation/>
+</functionEntry>
+</functions>
+</debugInfo>

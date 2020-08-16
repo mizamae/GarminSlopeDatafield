@@ -1,0 +1,5 @@
+<fitContributions>
+	<fitField id="0" displayInChart="true" sortOrder = "0" precision="1"
+	chartTitle="@Strings.slope_graph_label" dataLabel="@Strings.slope_label"
+	unitLabel="@Strings.slope_units" fillColor="#FF0000" />
+</fitContributions>

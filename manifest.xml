@@ -5,6 +5,7 @@
             <iq:product id="fr735xt"/>
         </iq:products>
         <iq:permissions>
+            <iq:uses-permission id="FitContributor"/>
             <iq:uses-permission id="Positioning"/>
         </iq:permissions>
         <iq:languages>
