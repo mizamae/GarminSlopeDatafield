@@ -295,7 +295,7 @@
 <entry endPc="268438848" name="rez_cmp_local_var_dc_getWidth" stackId="3" startPc="268438435"/>
 <entry endPc="268438848" name="rez_cmp_local_var_dc_getHeight" stackId="2" startPc="268438435"/>
 <entry endPc="268438848" name="rez_cmp_local_text_label" stackId="5" startPc="268438435"/>
-<entry endPc="268438848" name="rez_cmp_local_custom_drawable_19675648079994050462" stackId="4" startPc="268438435"/>
+<entry endPc="268438848" name="rez_cmp_local_custom_drawable_56772802165227925018" stackId="4" startPc="268438435"/>
 <entry endPc="268438849" name="dc" stackId="1" startPc="268438423"/>
 </localVars>
 <annotations/>
