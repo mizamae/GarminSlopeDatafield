@@ -243,7 +243,9 @@ class SlopeView extends WatchUi.DataField {
 			flagInsertNewValueToFilter=true;
 		}
 
-
+		if (InstantSlope > 100){InstantSlope=100;}
+		if (InstantSlope < -100){InstantSlope=-100;}
+		
         if (flagInsertNewValueToFilter and flagGoodData){
         	self.SlopeFilter.addSample(InstantSlope);
         	prevElapsedDistance=info.elapsedDistance;

@@ -1,5 +1,5 @@
 <properties>
-  <property id="AVGFILT_SAMPLES" type="number">5</property>
+  <property id="AVGFILT_SAMPLES" type="number">10</property>
   <property id="DISTANCE2UPDATE" type="number">2</property>
-  <property id="RISE_CALCULATION" type="number">0</property>
+  <property id="RISE_CALCULATION" type="number">1</property>
 </properties>

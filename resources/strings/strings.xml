@@ -4,7 +4,7 @@
     <string id="label">My Value</string>
     
     <string id="AVGFILT_SAMPLES">Number of samples to perform the moving average filter</string>
-    <string id="DISTANCE2UPDATE">Meters elapsed to execute the slope calculation</string>
+    <string id="DISTANCE2UPDATE">Distance elapsed to execute the slope calculation [m]</string>
     <string id="RISE_CALCULATION">Select the method to calculate the rise</string>
     <string id="Rise0">GPS altitude data</string>
     <string id="Rise1">Accumulated (des)ascent values from device</string>
