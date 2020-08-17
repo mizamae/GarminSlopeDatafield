@@ -54,9 +54,8 @@ class SlopeView extends WatchUi.DataField {
 
     hidden var currAlt;
     hidden var prevAlt;
-    hidden var ElapsedDistance;
 	hidden var prevElapsedDistance;
-    hidden var filter;
+    hidden var SlopeFilter;
     hidden var DISTANCE2UPDATE;
     hidden var deltaRise;
     hidden var gpsQuality;
@@ -91,7 +90,7 @@ class SlopeView extends WatchUi.DataField {
         if (RISE_METHOD == 0){flagRiseWithAltitude=true;}
         else{flagRiseWithAltitude=false;}
 
-        self.filter=new MovingAverage( AVGFILT_SAMPLES );
+        self.SlopeFilter=new MovingAverage( AVGFILT_SAMPLES );
 
 
         flagInsertNewValueToFilter=false;
@@ -178,16 +177,15 @@ class SlopeView extends WatchUi.DataField {
 
 		if (info has :elapsedDistance){
         	if(info.elapsedDistance  != null){
-        		ElapsedDistance=info.elapsedDistance;
+        		run=info.elapsedDistance-prevElapsedDistance; // this is if elapsedDistance is measuring horizontal distance
         	}else{
-        		ElapsedDistance=0.0f;
+        		run=0.0f;
         		flagGoodData=false;
         	}
     	}else{
-    		ElapsedDistance=0.0f;
+    		run=0.0f;
     		flagGoodData=false;
 		}
-        run=ElapsedDistance-prevElapsedDistance; // this is if elapsedDistance is measuring horizontal distance
 
         if (run == 0.0f){flagGoodData=false;}
 
@@ -214,9 +212,11 @@ class SlopeView extends WatchUi.DataField {
 	        }
 
 	        if ((speed>=15) and (run >= DISTANCE2UPDATE)){
+	        // high speed mode updates after DISTANCE2UPDATE meters covered
 	        	flagInsertNewValueToFilter=true;
 	        	System.println("High speed mode");
 	        }else if ((speed>0) and(speed<15) and (run >= 2*DISTANCE2UPDATE)){
+	        // low speed mode updates after 2xDISTANCE2UPDATE meters covered to reduce jitter
 	        	flagInsertNewValueToFilter=true;
 	        	System.println("Low speed mode");
 	        }else{run=0.0f;}
@@ -245,7 +245,7 @@ class SlopeView extends WatchUi.DataField {
 
 
         if (flagInsertNewValueToFilter and flagGoodData){
-        	self.filter.addSample(InstantSlope);
+        	self.SlopeFilter.addSample(InstantSlope);
         	prevElapsedDistance=info.elapsedDistance;
         	prevTotalAscent=info.totalAscent;
         	prevTotalDescent=info.totalDescent;
@@ -276,7 +276,7 @@ class SlopeView extends WatchUi.DataField {
         } else {
             value.setColor(Graphics.COLOR_BLACK);
         }
-        var filter_read = self.filter.getValue();
+        var filter_read = self.SlopeFilter.getValue();
 		value.setText(filter_read.format("%.1f")+"%");
 		self.mSlopeField.setData(filter_read);
 
