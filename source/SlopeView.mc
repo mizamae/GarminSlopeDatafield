@@ -13,7 +13,7 @@ class MovingAverage
 	protected var accumulator;
 	protected var buffer;
 	protected var SamplesInBuffer;
-	
+
 
 	function initialize( NumSamples ) {
 		self.samples = NumSamples;
@@ -24,7 +24,7 @@ class MovingAverage
 		}
 		self.SamplesInBuffer=0;
 	}
-	
+
 	function add2Buffer(value)
 	{
 		for( var i = 0; i < self.samples-1; i += 1 ) {
@@ -34,7 +34,7 @@ class MovingAverage
 		if (self.SamplesInBuffer<self.samples)
 		{self.SamplesInBuffer++;}
 	}
-	
+
 	function addSample(value)
 	{
 		self.accumulator += 1.0f/self.samples*(value-self.buffer[0]);
@@ -44,7 +44,7 @@ class MovingAverage
         //System.print("Accumulated value: ");
         //System.println(self.accumulator);
 	}
-	
+
 	function getValue()
 	{return self.accumulator;}
 }
@@ -64,7 +64,7 @@ class SlopeView extends WatchUi.DataField {
     hidden var flagInsertNewValueToFilter;
     hidden var flagGoodData;
     hidden var prevTotalAscent,prevTotalDescent;
-    
+
     enum{
     	NO_GPS_DATA,
     	GPS_POOR,
@@ -82,19 +82,25 @@ class SlopeView extends WatchUi.DataField {
         prevTotalDescent=0.0f;
         deltaRise=0.25;
         prevElapsedDistance = 0.0f;
-        
+
+        // properties
         var AVGFILT_SAMPLES = self.getParameter("AVGFILT_SAMPLES", __NUMSAMPLES_AVGFILT__);
         DISTANCE2UPDATE = self.getParameter("DISTANCE2UPDATE", __METERS_TO_UPDATE__);
-        self.filter=new MovingAverage( __NUMSAMPLES_AVGFILT__ );
-        
-        flagRiseWithAltitude=false;
+        var RISE_METHOD = self.getParameter("RISE_CALCULATION", 0);
+
+        if (RISE_METHOD == 0){flagRiseWithAltitude=true;}
+        else{flagRiseWithAltitude=false;}
+
+        self.filter=new MovingAverage( AVGFILT_SAMPLES );
+
+
         flagInsertNewValueToFilter=false;
         flagGoodData=false;
-        
+
         // this creates the field to be exported to Garmin Connect
-        mSlopeField = createField("current_slope", SLOPE_FIELD_ID, FitContributor.DATA_TYPE_FLOAT, { :mesgType=>FitContributor.MESG_TYPE_RECORD, :units=>"%" });
+        self.mSlopeField = createField("current_slope", SLOPE_FIELD_ID, FitContributor.DATA_TYPE_FLOAT, { :mesgType=>FitContributor.MESG_TYPE_RECORD, :units=>"%" });
     }
-	
+
 	function getParameter(paramName, defaultValue)
 	{
 	    var paramValue = Application.Properties.getValue(paramName);
@@ -102,19 +108,19 @@ class SlopeView extends WatchUi.DataField {
 	      paramValue = defaultValue;
 	      Application.Properties.setValue(paramName, defaultValue);
 	    }
-	    
+
 	    if (paramValue == null) { return 0; }
 	    return paramValue;
 	}
-  
+
     // Set your layout here. Anytime the size of obscurity of
     // the draw context is changed this will be called.
     function onLayout(dc) {
         View.setLayout(Rez.Layouts.MainLayout(dc));
         var labelView = View.findDrawableById("label");
         var valueView = View.findDrawableById("value");
-        
-        
+
+
         if (dc.getHeight() >= 89){
             labelView.locY = labelView.locY - 30;
             valueView.locY = valueView.locY + 7;
@@ -125,7 +131,7 @@ class SlopeView extends WatchUi.DataField {
         	valueView.locY = valueView.locY + 20;
         	valueView.setFont(Graphics.FONT_NUMBER_MILD);
         }
-        
+
 
         View.findDrawableById("label").setText("Slope");
         View.findDrawableById("value").setText("---%");
@@ -142,10 +148,10 @@ class SlopeView extends WatchUi.DataField {
     	var run=0.0f;
     	var speed=0.0f;
     	var InstantSlope=0.0f;
-    	
+
     	flagGoodData=true;
     	flagInsertNewValueToFilter=false;
-    	
+
     	if (info has :currentLocationAccuracy){
     		if (info.currentLocationAccuracy  != null) {
     			if (info.currentLocationAccuracy>=Position.QUALITY_USABLE){
@@ -164,12 +170,12 @@ class SlopeView extends WatchUi.DataField {
     		gpsQuality=NO_GPS_DATA;
     		flagGoodData=false;
 		}
-    	
+
 		if (info has :currentSpeed){
 			if(info.currentSpeed  != null){speed=info.currentSpeed*3.6;}
 			else{speed=5;}
 		}else{speed=5;}
-		
+
 		if (info has :elapsedDistance){
         	if(info.elapsedDistance  != null){
         		ElapsedDistance=info.elapsedDistance;
@@ -182,12 +188,12 @@ class SlopeView extends WatchUi.DataField {
     		flagGoodData=false;
 		}
         run=ElapsedDistance-prevElapsedDistance; // this is if elapsedDistance is measuring horizontal distance
-        
+
         if (run == 0.0f){flagGoodData=false;}
-        
+
         //theta=asin(rise/(ElapsedDistance-prevElapsedDistance));
         //run=(ElapsedDistance-prevElapsedDistance)*cos(theta); // this is if elapsedDistance is measuring inclined distance
-        
+
         if (flagRiseWithAltitude){
 	        if(info has :altitude ){
 	            if(info.altitude  != null){
@@ -200,21 +206,20 @@ class SlopeView extends WatchUi.DataField {
 	        	currAlt = prevAlt;
 	        	flagGoodData=false;
         	}
-	        
+
 	        if (prevAlt > -1000){
 	        	rise=currAlt-prevAlt;
 	        }else{
 	        	rise=0;
 	        }
-	        
+
 	        if ((speed>=15) and (run >= DISTANCE2UPDATE)){
 	        	flagInsertNewValueToFilter=true;
 	        	System.println("High speed mode");
 	        }else if ((speed>0) and(speed<15) and (run >= 2*DISTANCE2UPDATE)){
 	        	flagInsertNewValueToFilter=true;
 	        	System.println("Low speed mode");
-	        }else{run=0.0f;} 
-	        //prevAlt = currAlt;
+	        }else{run=0.0f;}
         }else{
         	if ((info has :totalAscent) and (info has :totalDescent)){
 	            if ((info.totalAscent != null) and (info.totalDescent != null)){
@@ -233,12 +238,12 @@ class SlopeView extends WatchUi.DataField {
         }
 
 		if (flagInsertNewValueToFilter and (run != 0.0f)){InstantSlope=rise/run*100;}
-		else if (run > 80){ // this is to update the slope value if rise is close to 0
+		else if (run > 80){ // this is to update the slope value if rise is close to 0 and calculation is based on totalAscent
 			InstantSlope=0.0f;
 			flagInsertNewValueToFilter=true;
 		}
-        	
-        
+
+
         if (flagInsertNewValueToFilter and flagGoodData){
         	self.filter.addSample(InstantSlope);
         	prevElapsedDistance=info.elapsedDistance;
@@ -250,10 +255,6 @@ class SlopeView extends WatchUi.DataField {
 	        System.print("Run is : ");
 	        System.println(run);
         }
-        
-        
-        //System.print("GPS quality is : ");
-        //System.println(gpsQuality);
     }
 
     // Display the value you computed here. This will be called
@@ -263,19 +264,22 @@ class SlopeView extends WatchUi.DataField {
         View.findDrawableById("Background").setColor(getBackgroundColor());
         var value = View.findDrawableById("value");
         var label = View.findDrawableById("label");
-        
+
+        if (gpsQuality==NO_GPS_DATA){label.setColor(Graphics.COLOR_RED );}
+        else if (gpsQuality==GPS_POOR){label.setColor(Graphics.COLOR_ORANGE );}
+        else{label.setColor(Graphics.COLOR_GREEN );}
+
         // Set the foreground color
 		if (getBackgroundColor() == Graphics.COLOR_BLACK) {
             value.setColor(Graphics.COLOR_WHITE);
-            label.setColor(Graphics.COLOR_WHITE);
+
         } else {
             value.setColor(Graphics.COLOR_BLACK);
-            label.setColor(Graphics.COLOR_BLACK);
         }
         var filter_read = self.filter.getValue();
 		value.setText(filter_read.format("%.1f")+"%");
-		mSlopeField.setData(filter_read);
-		
+		self.mSlopeField.setData(filter_read);
+
         // Call parent's onUpdate(dc) to redraw the layout
         View.onUpdate(dc);
     }
