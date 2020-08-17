@@ -41,8 +41,8 @@ class MovingAverage
 		self.add2Buffer(value);
 		System.print("New value to buffer: ");
         System.println(value);
-        System.print("Accumulated value: ");
-        System.println(self.accumulator);
+        //System.print("Accumulated value: ");
+        //System.println(self.accumulator);
 	}
 	
 	function getValue()
@@ -232,7 +232,7 @@ class SlopeView extends WatchUi.DataField {
 			}
         }
 
-		if (run != 0.0f){InstantSlope=rise/run*100;}
+		if (flagInsertNewValueToFilter and (run != 0.0f)){InstantSlope=rise/run*100;}
 		else if (run > 80){ // this is to update the slope value if rise is close to 0
 			InstantSlope=0.0f;
 			flagInsertNewValueToFilter=true;
