@@ -5,8 +5,58 @@ using Toybox.FitContributor;
 using Toybox.Position;
 
 const __NUMSAMPLES_AVGFILT__	=	5;
-const __METERS_TO_UPDATE__	=	5;
+const __NUMSAMPLES_LSREG__	=	10;
 
+class LeastSquares
+{
+	protected var samples;
+	protected var buffer;
+	protected var SamplesInBuffer;
+
+	function initialize( NumSamples ) {
+		self.samples = NumSamples;
+		self.buffer = new [self.samples];
+		for( var i = 0; i < self.samples; i += 1 ) {
+			self.buffer[i] = {"x" => 0.0f,"y" => 0.0f};
+		}
+		self.SamplesInBuffer=0;
+	 }
+
+	 function add2Buffer(value)
+	{
+		if (self.SamplesInBuffer==0) // initialization with the first value
+		{
+			for( var i = 0; i < self.samples; i += 1 ) {
+				self.buffer[i] = value;
+			}
+		}
+
+		for( var i = 0; i < self.samples-1; i += 1 ) {
+			self.buffer[i] = self.buffer[i+1];
+		}
+		self.buffer[self.samples-1]=value;
+		if (self.SamplesInBuffer<self.samples)
+		{self.SamplesInBuffer++;}
+
+		System.print("New value into LS buffer: ");
+		System.println(value);
+	}
+
+	function getValue()
+	{
+		var sumX=0.0f,sumY=0.0f,sumX2=0.0f,sumXY=0.0f;
+		for( var i = 0; i < self.samples; i += 1 ) {
+			sumX+=1.0f*self.buffer[i]["x"];
+			sumY+=1.0f*self.buffer[i]["y"];
+			sumX2+=1.0f*(self.buffer[i]["x"])*(self.buffer[i]["x"]);
+			sumXY+=1.0f*(self.buffer[i]["x"])*(self.buffer[i]["y"]);
+		}
+		var slope;
+		if (self.samples*sumX2-sumX*sumX != 0.0f){	slope=(1.0f*self.samples*sumXY-sumX*sumY)/(self.samples*sumX2-sumX*sumX);}
+		else{slope=0.0f;}
+		return slope;
+	}
+}
 class MovingAverage
 {
 	protected var samples;
@@ -39,8 +89,8 @@ class MovingAverage
 	{
 		self.accumulator += 1.0f/self.samples*(value-self.buffer[0]);
 		self.add2Buffer(value);
-		System.print("New value to buffer: ");
-        System.println(value);
+		//System.print("New value to buffer: ");
+        //System.println(value);
         //System.print("Accumulated value: ");
         //System.println(self.accumulator);
 	}
@@ -52,18 +102,12 @@ class MovingAverage
 
 class SlopeView extends WatchUi.DataField {
 
-    hidden var currAlt;
-    hidden var prevAlt;
-	hidden var prevElapsedDistance;
     hidden var SlopeFilter;
-    hidden var DISTANCE2UPDATE;
-    hidden var deltaRise;
     hidden var gpsQuality;
-    hidden var flagRiseWithAltitude;
     hidden var flagInsertNewValueToFilter;
     hidden var flagGoodData;
-    hidden var prevTotalAscent,prevTotalDescent;
-
+	hidden var LSRegression;
+	hidden var prevElapsedDistance;
     enum{
     	NO_GPS_DATA,
     	GPS_POOR,
@@ -75,23 +119,16 @@ class SlopeView extends WatchUi.DataField {
 
     function initialize() {
         DataField.initialize();
-        currAlt = 0.0f;
-        prevAlt = -1000.0f;
-        prevTotalAscent=0.0f;
-        prevTotalDescent=0.0f;
-        deltaRise=0.5;
-        prevElapsedDistance = 0.0f;
+
+		self.prevElapsedDistance=0.0f;
 
         // properties
         var AVGFILT_SAMPLES = self.getParameter("AVGFILT_SAMPLES", __NUMSAMPLES_AVGFILT__);
-        DISTANCE2UPDATE = self.getParameter("DISTANCE2UPDATE", __METERS_TO_UPDATE__);
-        var RISE_METHOD = self.getParameter("RISE_CALCULATION", 0);
+        var LSREGRESSION_SAMPLES = self.getParameter("LSREGRESSION_SAMPLES", __NUMSAMPLES_LSREG__);
 
-        if (RISE_METHOD == 0){flagRiseWithAltitude=true;}
-        else{flagRiseWithAltitude=false;}
 
         self.SlopeFilter=new MovingAverage( AVGFILT_SAMPLES );
-
+		self.LSRegression=new LeastSquares( LSREGRESSION_SAMPLES );
 
         flagInsertNewValueToFilter=false;
         flagGoodData=false;
@@ -176,86 +213,32 @@ class SlopeView extends WatchUi.DataField {
 		}else{speed=5;}
 
 		if (info has :elapsedDistance){
-        	if(info.elapsedDistance  != null){
-        		run=info.elapsedDistance-prevElapsedDistance; // this is if elapsedDistance is measuring horizontal distance
-        	}else{
-        		run=0.0f;
+        	if ((info.elapsedDistance  == null) or (info.elapsedDistance  <= 0.1) or (self.prevElapsedDistance==info.elapsedDistance)){
         		flagGoodData=false;
         	}
+        	self.prevElapsedDistance=info.elapsedDistance; // this is to avoid entering two points with the same X coordinates to the Regressor
     	}else{
-    		run=0.0f;
     		flagGoodData=false;
 		}
-
-        if (run == 0.0f){flagGoodData=false;}
 
         //theta=asin(rise/(ElapsedDistance-prevElapsedDistance));
         //run=(ElapsedDistance-prevElapsedDistance)*cos(theta); // this is if elapsedDistance is measuring inclined distance
 
-        if (flagRiseWithAltitude){
-	        if(info has :altitude ){
-	            if(info.altitude  != null){
-	                currAlt = info.altitude;
-	            } else {
-	                currAlt = prevAlt;
-	                flagGoodData=false;
-	            }
-	        }else{
-	        	currAlt = prevAlt;
-	        	flagGoodData=false;
-        	}
-
-	        if (prevAlt > -1000){
-	        	rise=currAlt-prevAlt;
-	        }else{
-	        	rise=0;
-	        }
-
-	        if ((speed>=15) and (run >= DISTANCE2UPDATE)){
-	        // high speed mode updates after DISTANCE2UPDATE meters covered
-	        	flagInsertNewValueToFilter=true;
-	        	System.println("High speed mode");
-	        }else if ((speed>0) and(speed<15) and (run >= 2*DISTANCE2UPDATE)){
-	        // low speed mode updates after 2xDISTANCE2UPDATE meters covered to reduce jitter
-	        	flagInsertNewValueToFilter=true;
-	        	System.println("Low speed mode");
-	        }else{run=0.0f;}
+        if(info has :altitude ){
+            if(info.altitude  == null){
+                flagGoodData=false;
+            }
         }else{
-        	if ((info has :totalAscent) and (info has :totalDescent)){
-	            if ((info.totalAscent != null) and (info.totalDescent != null)){
-        			if (info.totalAscent-prevTotalAscent >= deltaRise){
-        				rise=info.totalAscent-prevTotalAscent;
-        				flagInsertNewValueToFilter=true;
-        			}else if (info.totalDescent-prevTotalDescent >= deltaRise){
-        				rise=-(info.totalDescent-prevTotalDescent);
-        				flagInsertNewValueToFilter=true;
-        			}else{
-        				rise=0.0;
-        				flagInsertNewValueToFilter=false;
-    				}
-    			}
-			}
-        }
+        	flagGoodData=false;
+    	}
 
-		if (flagInsertNewValueToFilter and (run != 0.0f)){InstantSlope=rise/run*100;}
-		else if (run > 80){ // this is to update the slope value if rise is close to 0 and calculation is based on totalAscent
-			InstantSlope=0.0f;
+		if (flagGoodData){
+			self.LSRegression.add2Buffer({"x"=>info.elapsedDistance,"y"=>info.altitude});
 			flagInsertNewValueToFilter=true;
 		}
 
-		if (InstantSlope > 100){InstantSlope=100;}
-		if (InstantSlope < -100){InstantSlope=-100;}
-
-        if (flagInsertNewValueToFilter and flagGoodData){
-        	self.SlopeFilter.addSample(InstantSlope);
-        	prevElapsedDistance=info.elapsedDistance;
-        	prevTotalAscent=info.totalAscent;
-        	prevTotalDescent=info.totalDescent;
-        	prevAlt = currAlt;
-        	System.print("Rise is : ");
-	        System.println(rise);
-	        System.print("Run is : ");
-	        System.println(run);
+        if (flagInsertNewValueToFilter ){
+        	self.SlopeFilter.addSample(self.LSRegression.getValue()*100.0f);
         }
     }
 

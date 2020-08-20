@@ -1,17 +1,17 @@
 <settings>	
 	<setting propertyKey="@Properties.AVGFILT_SAMPLES" title="@Strings.AVGFILT_SAMPLES">
-    	<settingConfig type="numeric" min="4" max="20" />
+    	<settingConfig type="numeric" min="2" max="20" />
 	</setting>
  
-	<setting propertyKey="@Properties.DISTANCE2UPDATE" title="@Strings.DISTANCE2UPDATE">
-    	<settingConfig type="numeric" min="1" max="20" />
+	<setting propertyKey="@Properties.LSREGRESSION_SAMPLES" title="@Strings.LSREGRESSION_SAMPLES">
+    	<settingConfig type="numeric" min="5" max="20" />
 	</setting>
 	
-	<setting propertyKey="@Properties.RISE_CALCULATION" title="@Strings.RISE_CALCULATION">
-		<settingConfig type="list">
-			<listEntry value="0">@Strings.Rise0</listEntry>
-			<listEntry value="1">@Strings.Rise1</listEntry>
-		</settingConfig>
-	</setting>
+<!-- 	<setting propertyKey="@Properties.RISE_CALCULATION" title="@Strings.RISE_CALCULATION"> -->
+<!-- 		<settingConfig type="list"> -->
+<!-- 			<listEntry value="0">@Strings.Rise0</listEntry> -->
+<!-- 			<listEntry value="1">@Strings.Rise1</listEntry> -->
+<!-- 		</settingConfig> -->
+<!-- 	</setting> -->
 
 </settings>
