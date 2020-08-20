@@ -6,6 +6,7 @@ using Toybox.Position;
 
 const __NUMSAMPLES_AVGFILT__	=	5;
 const __NUMSAMPLES_LSREG__	=	10;
+const __MAX_ELEVATION_STEP__ = 0.5;
 
 class LeastSquares
 {
@@ -38,8 +39,8 @@ class LeastSquares
 		if (self.SamplesInBuffer<self.samples)
 		{self.SamplesInBuffer++;}
 
-		System.print("New value into LS buffer: ");
-		System.println(value);
+		//System.print("New value into LS buffer: ");
+		//System.println(value);
 	}
 
 	function getValue()
@@ -54,6 +55,8 @@ class LeastSquares
 		var slope;
 		if (self.samples*sumX2-sumX*sumX != 0.0f){	slope=(1.0f*self.samples*sumXY-sumX*sumY)/(self.samples*sumX2-sumX*sumX);}
 		else{slope=0.0f;}
+		//System.print("New value from LS: ");
+		//System.println(slope);
 		return slope;
 	}
 }
@@ -89,10 +92,6 @@ class MovingAverage
 	{
 		self.accumulator += 1.0f/self.samples*(value-self.buffer[0]);
 		self.add2Buffer(value);
-		//System.print("New value to buffer: ");
-        //System.println(value);
-        //System.print("Accumulated value: ");
-        //System.println(self.accumulator);
 	}
 
 	function getValue()
@@ -108,6 +107,8 @@ class SlopeView extends WatchUi.DataField {
     hidden var flagGoodData;
 	hidden var LSRegression;
 	hidden var prevElapsedDistance;
+	hidden var prevElevation;
+
     enum{
     	NO_GPS_DATA,
     	GPS_POOR,
@@ -121,6 +122,7 @@ class SlopeView extends WatchUi.DataField {
         DataField.initialize();
 
 		self.prevElapsedDistance=0.0f;
+		self.prevElevation=0.0f;
 
         // properties
         var AVGFILT_SAMPLES = self.getParameter("AVGFILT_SAMPLES", __NUMSAMPLES_AVGFILT__);
@@ -184,6 +186,7 @@ class SlopeView extends WatchUi.DataField {
     	var run=0.0f;
     	var speed=0.0f;
     	var InstantSlope=0.0f;
+		var maxAltStep=0.0f;
 
     	flagGoodData=true;
     	flagInsertNewValueToFilter=false;
@@ -212,6 +215,9 @@ class SlopeView extends WatchUi.DataField {
 			else{speed=5;}
 		}else{speed=5;}
 
+		if (speed>15){maxAltStep=__MAX_ELEVATION_STEP__*2.0;}
+		else{maxAltStep=__MAX_ELEVATION_STEP__;}
+
 		if (info has :elapsedDistance){
         	if ((info.elapsedDistance  == null) or (info.elapsedDistance  <= 0.1) or (self.prevElapsedDistance==info.elapsedDistance)){
         		flagGoodData=false;
@@ -221,13 +227,12 @@ class SlopeView extends WatchUi.DataField {
     		flagGoodData=false;
 		}
 
-        //theta=asin(rise/(ElapsedDistance-prevElapsedDistance));
-        //run=(ElapsedDistance-prevElapsedDistance)*cos(theta); // this is if elapsedDistance is measuring inclined distance
-
         if(info has :altitude ){
-            if(info.altitude  == null){
-                flagGoodData=false;
-            }
+            if(info.altitude  == null){flagGoodData=false;}
+            else if ((info.altitude-self.prevElevation>maxAltStep) or (info.altitude-self.prevElevation<-maxAltStep)){
+            	flagGoodData=false; // this avoids entering values with too much variation in the altitude
+        	}
+        	if(info.altitude  != null){self.prevElevation=info.altitude;}
         }else{
         	flagGoodData=false;
     	}

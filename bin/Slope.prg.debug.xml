@@ -15,188 +15,197 @@
 <entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeBackground.mc" id="10" lineNum="21" pc="268435592" symbol="draw"/>
 <entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeBackground.mc" id="10" lineNum="22" pc="268435596" symbol="draw"/>
 <entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeBackground.mc" id="10" lineNum="23" pc="268435628" symbol="draw"/>
-<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="12" lineNum="16" pc="268435641" symbol="initialize"/>
-<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="12" lineNum="17" pc="268435645" symbol="initialize"/>
-<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="12" lineNum="18" pc="268435655" symbol="initialize"/>
-<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="12" lineNum="19" pc="268435672" symbol="initialize"/>
-<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="12" lineNum="20" pc="268435693" symbol="initialize"/>
-<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="12" lineNum="22" pc="268435749" symbol="initialize"/>
-<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="13" lineNum="25" pc="268435763" symbol="add2Buffer"/>
-<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="13" lineNum="27" pc="268435767" symbol="add2Buffer"/>
-<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="13" lineNum="29" pc="268435784" symbol="add2Buffer"/>
-<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="13" lineNum="30" pc="268435805" symbol="add2Buffer"/>
-<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="13" lineNum="34" pc="268435834" symbol="add2Buffer"/>
-<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="13" lineNum="35" pc="268435861" symbol="add2Buffer"/>
-<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="13" lineNum="37" pc="268435902" symbol="add2Buffer"/>
-<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="13" lineNum="38" pc="268435927" symbol="add2Buffer"/>
-<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="13" lineNum="39" pc="268435947" symbol="add2Buffer"/>
-<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="13" lineNum="41" pc="268435969" symbol="add2Buffer"/>
-<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="13" lineNum="42" pc="268435992" symbol="add2Buffer"/>
-<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="14" lineNum="45" pc="268436013" symbol="getValue"/>
-<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="14" lineNum="47" pc="268436017" symbol="getValue"/>
-<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="14" lineNum="48" pc="268436045" symbol="getValue"/>
-<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="14" lineNum="49" pc="268436066" symbol="getValue"/>
-<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="14" lineNum="50" pc="268436094" symbol="getValue"/>
-<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="14" lineNum="51" pc="268436122" symbol="getValue"/>
-<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="14" lineNum="52" pc="268436168" symbol="getValue"/>
-<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="14" lineNum="54" pc="268436227" symbol="getValue"/>
-<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="14" lineNum="55" pc="268436227" symbol="getValue"/>
-<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="14" lineNum="55" pc="268436253" symbol="getValue"/>
-<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="14" lineNum="56" pc="268436299" symbol="getValue"/>
-<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="14" lineNum="57" pc="268436306" symbol="getValue"/>
-<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="16" lineNum="68" pc="268436310" symbol="initialize"/>
-<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="16" lineNum="69" pc="268436314" symbol="initialize"/>
-<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="16" lineNum="70" pc="268436324" symbol="initialize"/>
-<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="16" lineNum="71" pc="268436337" symbol="initialize"/>
-<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="16" lineNum="72" pc="268436354" symbol="initialize"/>
-<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="16" lineNum="73" pc="268436375" symbol="initialize"/>
-<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="16" lineNum="75" pc="268436404" symbol="initialize"/>
-<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="17" lineNum="78" pc="268436418" symbol="add2Buffer"/>
-<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="17" lineNum="80" pc="268436422" symbol="add2Buffer"/>
-<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="17" lineNum="81" pc="268436449" symbol="add2Buffer"/>
-<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="17" lineNum="83" pc="268436490" symbol="add2Buffer"/>
-<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="17" lineNum="84" pc="268436515" symbol="add2Buffer"/>
-<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="17" lineNum="85" pc="268436535" symbol="add2Buffer"/>
-<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="18" lineNum="88" pc="268436558" symbol="addSample"/>
-<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="18" lineNum="90" pc="268436562" symbol="addSample"/>
-<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="18" lineNum="91" pc="268436608" symbol="addSample"/>
-<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="19" lineNum="98" pc="268436623" symbol="getValue"/>
-<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="19" lineNum="99" pc="268436627" symbol="getValue"/>
-<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="21" lineNum="120" pc="268436637" symbol="initialize"/>
-<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="21" lineNum="121" pc="268436641" symbol="initialize"/>
-<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="21" lineNum="123" pc="268436659" symbol="initialize"/>
-<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="21" lineNum="126" pc="268436672" symbol="initialize"/>
-<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="21" lineNum="127" pc="268436698" symbol="initialize"/>
-<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="21" lineNum="130" pc="268436724" symbol="initialize"/>
-<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="21" lineNum="131" pc="268436756" symbol="initialize"/>
-<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="21" lineNum="133" pc="268436788" symbol="initialize"/>
-<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="21" lineNum="134" pc="268436798" symbol="initialize"/>
-<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="21" lineNum="137" pc="268436808" symbol="initialize"/>
-<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="22" lineNum="140" pc="268436892" symbol="getParameter"/>
-<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="22" lineNum="142" pc="268436896" symbol="getParameter"/>
-<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="22" lineNum="143" pc="268436923" symbol="getParameter"/>
-<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="22" lineNum="144" pc="268436930" symbol="getParameter"/>
-<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="22" lineNum="145" pc="268436934" symbol="getParameter"/>
-<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="22" lineNum="148" pc="268436965" symbol="getParameter"/>
-<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="22" lineNum="148" pc="268436972" symbol="getParameter"/>
-<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="22" lineNum="149" pc="268436981" symbol="getParameter"/>
-<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="23" lineNum="154" pc="268436985" symbol="onLayout"/>
-<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="23" lineNum="155" pc="268436989" symbol="onLayout"/>
-<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="23" lineNum="156" pc="268437032" symbol="onLayout"/>
-<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="23" lineNum="157" pc="268437056" symbol="onLayout"/>
-<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="23" lineNum="160" pc="268437080" symbol="onLayout"/>
-<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="23" lineNum="161" pc="268437100" symbol="onLayout"/>
-<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="23" lineNum="162" pc="268437122" symbol="onLayout"/>
-<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="23" lineNum="163" pc="268437144" symbol="onLayout"/>
-<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="23" lineNum="166" pc="268437171" symbol="onLayout"/>
-<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="23" lineNum="167" pc="268437193" symbol="onLayout"/>
-<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="23" lineNum="168" pc="268437215" symbol="onLayout"/>
-<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="23" lineNum="172" pc="268437239" symbol="onLayout"/>
-<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="23" lineNum="173" pc="268437276" symbol="onLayout"/>
-<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="23" lineNum="174" pc="268437313" symbol="onLayout"/>
-<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="24" lineNum="181" pc="268437317" symbol="compute"/>
-<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="24" lineNum="182" pc="268437321" symbol="compute"/>
-<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="24" lineNum="183" pc="268437328" symbol="compute"/>
-<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="24" lineNum="184" pc="268437335" symbol="compute"/>
-<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="24" lineNum="185" pc="268437342" symbol="compute"/>
-<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="24" lineNum="186" pc="268437349" symbol="compute"/>
-<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="24" lineNum="188" pc="268437356" symbol="compute"/>
-<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="24" lineNum="189" pc="268437366" symbol="compute"/>
-<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="24" lineNum="191" pc="268437376" symbol="compute"/>
-<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="24" lineNum="192" pc="268437387" symbol="compute"/>
-<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="24" lineNum="193" pc="268437400" symbol="compute"/>
-<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="24" lineNum="194" pc="268437424" symbol="compute"/>
-<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="24" lineNum="195" pc="268437443" symbol="compute"/>
-<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="24" lineNum="196" pc="268437467" symbol="compute"/>
-<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="24" lineNum="198" pc="268437486" symbol="compute"/>
-<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="24" lineNum="199" pc="268437502" symbol="compute"/>
-<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="24" lineNum="202" pc="268437515" symbol="compute"/>
-<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="24" lineNum="203" pc="268437531" symbol="compute"/>
-<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="24" lineNum="206" pc="268437544" symbol="compute"/>
-<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="24" lineNum="207" pc="268437560" symbol="compute"/>
-<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="24" lineNum="210" pc="268437570" symbol="compute"/>
-<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="24" lineNum="211" pc="268437581" symbol="compute"/>
-<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="24" lineNum="211" pc="268437594" symbol="compute"/>
-<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="24" lineNum="212" pc="268437613" symbol="compute"/>
-<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="24" lineNum="213" pc="268437623" symbol="compute"/>
-<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="24" lineNum="215" pc="268437630" symbol="compute"/>
-<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="24" lineNum="216" pc="268437641" symbol="compute"/>
-<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="24" lineNum="217" pc="268437697" symbol="compute"/>
-<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="24" lineNum="219" pc="268437710" symbol="compute"/>
-<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="24" lineNum="221" pc="268437729" symbol="compute"/>
-<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="24" lineNum="227" pc="268437739" symbol="compute"/>
-<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="24" lineNum="228" pc="268437750" symbol="compute"/>
-<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="24" lineNum="229" pc="268437763" symbol="compute"/>
-<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="24" lineNum="232" pc="268437779" symbol="compute"/>
-<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="24" lineNum="235" pc="268437789" symbol="compute"/>
-<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="24" lineNum="236" pc="268437800" symbol="compute"/>
-<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="24" lineNum="237" pc="268437856" symbol="compute"/>
-<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="24" lineNum="240" pc="268437869" symbol="compute"/>
-<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="24" lineNum="241" pc="268437880" symbol="compute"/>
-<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="25" lineNum="247" pc="268437925" symbol="onUpdate"/>
-<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="25" lineNum="249" pc="268437929" symbol="onUpdate"/>
-<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="25" lineNum="250" pc="268437972" symbol="onUpdate"/>
-<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="25" lineNum="251" pc="268437996" symbol="onUpdate"/>
-<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="25" lineNum="253" pc="268438020" symbol="onUpdate"/>
-<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="25" lineNum="253" pc="268438040" symbol="onUpdate"/>
-<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="25" lineNum="254" pc="268438067" symbol="onUpdate"/>
-<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="25" lineNum="254" pc="268438087" symbol="onUpdate"/>
-<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="25" lineNum="255" pc="268438114" symbol="onUpdate"/>
-<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="25" lineNum="258" pc="268438138" symbol="onUpdate"/>
-<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="25" lineNum="259" pc="268438165" symbol="onUpdate"/>
-<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="25" lineNum="262" pc="268438192" symbol="onUpdate"/>
-<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="25" lineNum="264" pc="268438216" symbol="onUpdate"/>
-<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="25" lineNum="265" pc="268438235" symbol="onUpdate"/>
-<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="25" lineNum="266" pc="268438269" symbol="onUpdate"/>
-<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="25" lineNum="269" pc="268438289" symbol="onUpdate"/>
-<entry filename="Rez" id="31" lineNum="15" pc="268438310" symbol="MainLayout"/>
-<entry filename="Rez" id="31" lineNum="17" pc="268438322" symbol="MainLayout"/>
-<entry filename="Rez" id="31" lineNum="18" pc="268438335" symbol="MainLayout"/>
-<entry filename="Rez" id="31" lineNum="20" pc="268438348" symbol="MainLayout"/>
-<entry filename="Rez" id="31" lineNum="21" pc="268438372" symbol="MainLayout"/>
-<entry filename="Rez" id="31" lineNum="22" pc="268438535" symbol="MainLayout"/>
-<entry filename="Rez" id="31" lineNum="24" pc="268438698" symbol="MainLayout"/>
+<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="12" lineNum="17" pc="268435641" symbol="initialize"/>
+<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="12" lineNum="18" pc="268435645" symbol="initialize"/>
+<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="12" lineNum="19" pc="268435655" symbol="initialize"/>
+<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="12" lineNum="20" pc="268435672" symbol="initialize"/>
+<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="12" lineNum="21" pc="268435693" symbol="initialize"/>
+<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="12" lineNum="23" pc="268435749" symbol="initialize"/>
+<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="13" lineNum="26" pc="268435763" symbol="add2Buffer"/>
+<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="13" lineNum="28" pc="268435767" symbol="add2Buffer"/>
+<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="13" lineNum="30" pc="268435784" symbol="add2Buffer"/>
+<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="13" lineNum="31" pc="268435805" symbol="add2Buffer"/>
+<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="13" lineNum="35" pc="268435834" symbol="add2Buffer"/>
+<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="13" lineNum="36" pc="268435861" symbol="add2Buffer"/>
+<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="13" lineNum="38" pc="268435902" symbol="add2Buffer"/>
+<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="13" lineNum="39" pc="268435927" symbol="add2Buffer"/>
+<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="13" lineNum="40" pc="268435947" symbol="add2Buffer"/>
+<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="14" lineNum="46" pc="268435970" symbol="getValue"/>
+<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="14" lineNum="48" pc="268435974" symbol="getValue"/>
+<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="14" lineNum="49" pc="268436002" symbol="getValue"/>
+<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="14" lineNum="50" pc="268436023" symbol="getValue"/>
+<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="14" lineNum="51" pc="268436051" symbol="getValue"/>
+<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="14" lineNum="52" pc="268436079" symbol="getValue"/>
+<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="14" lineNum="53" pc="268436125" symbol="getValue"/>
+<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="14" lineNum="55" pc="268436184" symbol="getValue"/>
+<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="14" lineNum="56" pc="268436184" symbol="getValue"/>
+<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="14" lineNum="56" pc="268436210" symbol="getValue"/>
+<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="14" lineNum="57" pc="268436256" symbol="getValue"/>
+<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="14" lineNum="60" pc="268436263" symbol="getValue"/>
+<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="16" lineNum="71" pc="268436267" symbol="initialize"/>
+<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="16" lineNum="72" pc="268436271" symbol="initialize"/>
+<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="16" lineNum="73" pc="268436281" symbol="initialize"/>
+<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="16" lineNum="74" pc="268436294" symbol="initialize"/>
+<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="16" lineNum="75" pc="268436311" symbol="initialize"/>
+<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="16" lineNum="76" pc="268436332" symbol="initialize"/>
+<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="16" lineNum="78" pc="268436361" symbol="initialize"/>
+<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="17" lineNum="81" pc="268436375" symbol="add2Buffer"/>
+<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="17" lineNum="83" pc="268436379" symbol="add2Buffer"/>
+<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="17" lineNum="84" pc="268436406" symbol="add2Buffer"/>
+<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="17" lineNum="86" pc="268436447" symbol="add2Buffer"/>
+<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="17" lineNum="87" pc="268436472" symbol="add2Buffer"/>
+<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="17" lineNum="88" pc="268436492" symbol="add2Buffer"/>
+<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="18" lineNum="91" pc="268436515" symbol="addSample"/>
+<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="18" lineNum="93" pc="268436519" symbol="addSample"/>
+<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="18" lineNum="94" pc="268436565" symbol="addSample"/>
+<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="19" lineNum="97" pc="268436580" symbol="getValue"/>
+<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="19" lineNum="98" pc="268436584" symbol="getValue"/>
+<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="21" lineNum="121" pc="268436594" symbol="initialize"/>
+<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="21" lineNum="122" pc="268436598" symbol="initialize"/>
+<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="21" lineNum="124" pc="268436616" symbol="initialize"/>
+<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="21" lineNum="125" pc="268436629" symbol="initialize"/>
+<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="21" lineNum="128" pc="268436642" symbol="initialize"/>
+<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="21" lineNum="129" pc="268436668" symbol="initialize"/>
+<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="21" lineNum="132" pc="268436694" symbol="initialize"/>
+<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="21" lineNum="133" pc="268436726" symbol="initialize"/>
+<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="21" lineNum="135" pc="268436758" symbol="initialize"/>
+<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="21" lineNum="136" pc="268436768" symbol="initialize"/>
+<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="21" lineNum="139" pc="268436778" symbol="initialize"/>
+<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="22" lineNum="142" pc="268436862" symbol="getParameter"/>
+<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="22" lineNum="144" pc="268436866" symbol="getParameter"/>
+<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="22" lineNum="145" pc="268436893" symbol="getParameter"/>
+<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="22" lineNum="146" pc="268436900" symbol="getParameter"/>
+<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="22" lineNum="147" pc="268436904" symbol="getParameter"/>
+<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="22" lineNum="150" pc="268436935" symbol="getParameter"/>
+<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="22" lineNum="150" pc="268436942" symbol="getParameter"/>
+<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="22" lineNum="151" pc="268436951" symbol="getParameter"/>
+<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="23" lineNum="156" pc="268436955" symbol="onLayout"/>
+<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="23" lineNum="157" pc="268436959" symbol="onLayout"/>
+<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="23" lineNum="158" pc="268437002" symbol="onLayout"/>
+<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="23" lineNum="159" pc="268437026" symbol="onLayout"/>
+<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="23" lineNum="162" pc="268437050" symbol="onLayout"/>
+<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="23" lineNum="163" pc="268437070" symbol="onLayout"/>
+<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="23" lineNum="164" pc="268437092" symbol="onLayout"/>
+<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="23" lineNum="165" pc="268437114" symbol="onLayout"/>
+<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="23" lineNum="168" pc="268437141" symbol="onLayout"/>
+<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="23" lineNum="169" pc="268437163" symbol="onLayout"/>
+<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="23" lineNum="170" pc="268437185" symbol="onLayout"/>
+<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="23" lineNum="174" pc="268437209" symbol="onLayout"/>
+<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="23" lineNum="175" pc="268437246" symbol="onLayout"/>
+<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="23" lineNum="176" pc="268437283" symbol="onLayout"/>
+<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="24" lineNum="183" pc="268437287" symbol="compute"/>
+<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="24" lineNum="184" pc="268437291" symbol="compute"/>
+<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="24" lineNum="185" pc="268437298" symbol="compute"/>
+<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="24" lineNum="186" pc="268437305" symbol="compute"/>
+<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="24" lineNum="187" pc="268437312" symbol="compute"/>
+<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="24" lineNum="188" pc="268437319" symbol="compute"/>
+<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="24" lineNum="189" pc="268437326" symbol="compute"/>
+<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="24" lineNum="191" pc="268437333" symbol="compute"/>
+<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="24" lineNum="192" pc="268437343" symbol="compute"/>
+<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="24" lineNum="194" pc="268437353" symbol="compute"/>
+<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="24" lineNum="195" pc="268437364" symbol="compute"/>
+<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="24" lineNum="196" pc="268437377" symbol="compute"/>
+<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="24" lineNum="197" pc="268437401" symbol="compute"/>
+<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="24" lineNum="198" pc="268437420" symbol="compute"/>
+<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="24" lineNum="199" pc="268437444" symbol="compute"/>
+<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="24" lineNum="201" pc="268437463" symbol="compute"/>
+<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="24" lineNum="202" pc="268437479" symbol="compute"/>
+<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="24" lineNum="205" pc="268437492" symbol="compute"/>
+<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="24" lineNum="206" pc="268437508" symbol="compute"/>
+<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="24" lineNum="209" pc="268437521" symbol="compute"/>
+<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="24" lineNum="210" pc="268437537" symbol="compute"/>
+<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="24" lineNum="213" pc="268437547" symbol="compute"/>
+<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="24" lineNum="214" pc="268437558" symbol="compute"/>
+<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="24" lineNum="214" pc="268437571" symbol="compute"/>
+<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="24" lineNum="215" pc="268437590" symbol="compute"/>
+<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="24" lineNum="216" pc="268437600" symbol="compute"/>
+<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="24" lineNum="218" pc="268437607" symbol="compute"/>
+<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="24" lineNum="218" pc="268437618" symbol="compute"/>
+<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="24" lineNum="219" pc="268437637" symbol="compute"/>
+<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="24" lineNum="221" pc="268437647" symbol="compute"/>
+<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="24" lineNum="222" pc="268437658" symbol="compute"/>
+<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="24" lineNum="223" pc="268437714" symbol="compute"/>
+<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="24" lineNum="225" pc="268437727" symbol="compute"/>
+<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="24" lineNum="227" pc="268437746" symbol="compute"/>
+<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="24" lineNum="230" pc="268437756" symbol="compute"/>
+<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="24" lineNum="231" pc="268437767" symbol="compute"/>
+<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="24" lineNum="231" pc="268437780" symbol="compute"/>
+<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="24" lineNum="232" pc="268437793" symbol="compute"/>
+<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="24" lineNum="233" pc="268437848" symbol="compute"/>
+<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="24" lineNum="235" pc="268437861" symbol="compute"/>
+<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="24" lineNum="235" pc="268437874" symbol="compute"/>
+<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="24" lineNum="237" pc="268437896" symbol="compute"/>
+<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="24" lineNum="240" pc="268437906" symbol="compute"/>
+<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="24" lineNum="241" pc="268437917" symbol="compute"/>
+<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="24" lineNum="242" pc="268437973" symbol="compute"/>
+<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="24" lineNum="245" pc="268437986" symbol="compute"/>
+<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="24" lineNum="246" pc="268437997" symbol="compute"/>
+<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="25" lineNum="252" pc="268438042" symbol="onUpdate"/>
+<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="25" lineNum="254" pc="268438046" symbol="onUpdate"/>
+<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="25" lineNum="255" pc="268438089" symbol="onUpdate"/>
+<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="25" lineNum="256" pc="268438113" symbol="onUpdate"/>
+<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="25" lineNum="258" pc="268438137" symbol="onUpdate"/>
+<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="25" lineNum="258" pc="268438157" symbol="onUpdate"/>
+<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="25" lineNum="259" pc="268438184" symbol="onUpdate"/>
+<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="25" lineNum="259" pc="268438204" symbol="onUpdate"/>
+<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="25" lineNum="260" pc="268438231" symbol="onUpdate"/>
+<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="25" lineNum="263" pc="268438255" symbol="onUpdate"/>
+<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="25" lineNum="264" pc="268438282" symbol="onUpdate"/>
+<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="25" lineNum="267" pc="268438309" symbol="onUpdate"/>
+<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="25" lineNum="269" pc="268438333" symbol="onUpdate"/>
+<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="25" lineNum="270" pc="268438352" symbol="onUpdate"/>
+<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="25" lineNum="271" pc="268438386" symbol="onUpdate"/>
+<entry filename="D:\\Datos\\Documents\\GitHub\\GarminSlopeDatafield\\source\\SlopeView.mc" id="25" lineNum="274" pc="268438406" symbol="onUpdate"/>
+<entry filename="Rez" id="31" lineNum="15" pc="268438427" symbol="MainLayout"/>
+<entry filename="Rez" id="31" lineNum="17" pc="268438439" symbol="MainLayout"/>
+<entry filename="Rez" id="31" lineNum="18" pc="268438452" symbol="MainLayout"/>
+<entry filename="Rez" id="31" lineNum="20" pc="268438465" symbol="MainLayout"/>
+<entry filename="Rez" id="31" lineNum="21" pc="268438489" symbol="MainLayout"/>
+<entry filename="Rez" id="31" lineNum="22" pc="268438652" symbol="MainLayout"/>
+<entry filename="Rez" id="31" lineNum="24" pc="268438815" symbol="MainLayout"/>
 </pcToLineNum>
 <symbolTable>
-<entry id="13" object="true" symbol="MovingAverage"/>
-<entry field="true" id="31" symbol="SlopeFilter"/>
+<entry id="14" object="true" symbol="MovingAverage"/>
+<entry field="true" id="32" symbol="SlopeFilter"/>
 <entry id="8389124" method="true" symbol="onUpdate"/>
 <entry id="8389349" symbol="justification"/>
 <entry field="true" id="11" symbol="__NUMSAMPLES_LSREG__"/>
-<entry field="true" id="16" symbol="buffer"/>
+<entry field="true" id="17" symbol="buffer"/>
 <entry id="8389629" method="true" symbol="getValue"/>
-<entry id="14" object="true" symbol="SlopeView"/>
+<entry id="15" object="true" symbol="SlopeView"/>
 <entry field="true" id="8388611" module="true" symbol="Toybox"/>
 <entry id="8388770" module="true" object="true" symbol="Strings"/>
 <entry field="true" id="8389138" symbol="label"/>
 <entry id="8389280" method="true" symbol="getInitialView"/>
 <entry id="8389068" method="true" symbol="draw"/>
 <entry id="8389849" symbol="units"/>
-<entry field="true" id="29" symbol="AVGFILT_SAMPLES"/>
+<entry field="true" id="30" symbol="AVGFILT_SAMPLES"/>
 <entry id="8388639" module="true" symbol="Graphics"/>
-<entry id="24" method="true" symbol="MainLayout"/>
+<entry id="25" method="true" symbol="MainLayout"/>
+<entry field="true" id="12" symbol="__MAX_ELEVATION_STEP__"/>
 <entry id="8388769" module="true" object="true" symbol="Rez"/>
-<entry field="true" id="25" symbol="slope_graph_label"/>
+<entry field="true" id="38" symbol="prevElevation"/>
+<entry field="true" id="26" symbol="slope_graph_label"/>
 <entry id="9" object="true" symbol="SlopeApp"/>
 <entry field="true" id="8389130" symbol="mColor"/>
-<entry id="18" method="true" symbol="add2Buffer"/>
+<entry id="19" method="true" symbol="add2Buffer"/>
 <entry id="8389131" method="true" symbol="setColor"/>
 <entry id="8388702" method="true" symbol="initialize"/>
-<entry field="true" id="30" symbol="AppName"/>
-<entry field="true" id="19" symbol="accumulator"/>
-<entry field="true" id="35" symbol="LSRegression"/>
+<entry field="true" id="31" symbol="AppName"/>
+<entry field="true" id="20" symbol="accumulator"/>
+<entry field="true" id="36" symbol="LSRegression"/>
 <entry id="8390146" module="true" object="true" symbol="Background"/>
-<entry field="true" id="41" symbol="mSlopeField"/>
+<entry field="true" id="43" symbol="mSlopeField"/>
 <entry id="8388641" module="true" symbol="Math"/>
-<entry field="true" id="23" symbol="LauncherIcon"/>
-<entry field="true" id="37" symbol="NO_GPS_DATA"/>
-<entry field="true" id="28" symbol="slope_label"/>
-<entry field="true" id="26" symbol="LSREGRESSION_SAMPLES"/>
+<entry field="true" id="24" symbol="LauncherIcon"/>
+<entry field="true" id="39" symbol="NO_GPS_DATA"/>
+<entry field="true" id="29" symbol="slope_label"/>
+<entry field="true" id="27" symbol="LSREGRESSION_SAMPLES"/>
 <entry id="8388648" module="true" symbol="WatchUi"/>
 <entry id="8389281" method="true" symbol="onStop"/>
-<entry field="true" id="38" symbol="GPS_POOR"/>
-<entry field="true" id="32" symbol="gpsQuality"/>
-<entry field="true" id="27" symbol="slope_units"/>
+<entry field="true" id="40" symbol="GPS_POOR"/>
+<entry field="true" id="33" symbol="gpsQuality"/>
+<entry field="true" id="28" symbol="slope_units"/>
 <entry field="true" id="8389065" symbol="locY"/>
 <entry field="true" id="8389064" symbol="locX"/>
 <entry id="8388771" module="true" object="true" symbol="Drawables"/>
@@ -207,27 +216,27 @@
 <entry field="true" id="8388738" symbol="currentSpeed"/>
 <entry field="true" id="8388734" symbol="elapsedDistance"/>
 <entry id="8389348" symbol="font"/>
-<entry id="12" object="true" symbol="LeastSquares"/>
+<entry id="13" object="true" symbol="LeastSquares"/>
 <entry id="8389347" symbol="color"/>
-<entry id="20" method="true" symbol="addSample"/>
-<entry field="true" id="33" symbol="flagInsertNewValueToFilter"/>
-<entry field="true" id="36" symbol="prevElapsedDistance"/>
-<entry field="true" id="40" symbol="SLOPE_FIELD_ID"/>
-<entry id="21" module="true" symbol="Layouts"/>
-<entry id="42" method="true" symbol="getParameter"/>
+<entry id="21" method="true" symbol="addSample"/>
+<entry field="true" id="34" symbol="flagInsertNewValueToFilter"/>
+<entry field="true" id="37" symbol="prevElapsedDistance"/>
+<entry field="true" id="42" symbol="SLOPE_FIELD_ID"/>
+<entry id="22" module="true" symbol="Layouts"/>
+<entry id="44" method="true" symbol="getParameter"/>
 <entry id="8388642" module="true" symbol="Position"/>
 <entry id="8390088" module="true" object="true" symbol="JsonData"/>
 <entry id="8389780" module="true" symbol="FitContributor"/>
-<entry field="true" id="39" symbol="GPS_GOOD"/>
+<entry field="true" id="41" symbol="GPS_GOOD"/>
 <entry field="true" id="8389063" symbol="identifier"/>
 <entry field="true" id="8388735" symbol="currentLocationAccuracy"/>
-<entry id="22" module="true" symbol="Menus"/>
-<entry field="true" id="34" symbol="flagGoodData"/>
+<entry id="23" module="true" symbol="Menus"/>
+<entry field="true" id="35" symbol="flagGoodData"/>
 <entry id="8389847" symbol="mesgType"/>
 <entry id="8388772" module="true" object="true" symbol="Fonts"/>
-<entry field="true" id="17" symbol="SamplesInBuffer"/>
+<entry field="true" id="18" symbol="SamplesInBuffer"/>
 <entry id="8388635" module="true" symbol="Application"/>
-<entry field="true" id="15" symbol="samples"/>
+<entry field="true" id="16" symbol="samples"/>
 <entry field="true" id="10" symbol="__NUMSAMPLES_AVGFILT__"/>
 </symbolTable>
 <localVars>
@@ -240,58 +249,59 @@
 <entry endPc="268435763" name="NumSamples" stackId="1" startPc="268435641"/>
 <entry endPc="268435831" name="i" stackId="2" startPc="268435805"/>
 <entry endPc="268435902" name="i" stackId="3" startPc="268435861"/>
-<entry endPc="268436013" name="value" stackId="1" startPc="268435763"/>
-<entry endPc="268436227" name="i" stackId="5" startPc="268436066"/>
-<entry endPc="268436309" name="slope" stackId="6" startPc="268436017"/>
-<entry endPc="268436309" name="sumXY" stackId="4" startPc="268436017"/>
-<entry endPc="268436309" name="sumX2" stackId="3" startPc="268436017"/>
-<entry endPc="268436309" name="sumY" stackId="2" startPc="268436017"/>
-<entry endPc="268436309" name="sumX" stackId="1" startPc="268436017"/>
-<entry endPc="268436404" name="i" stackId="2" startPc="268436375"/>
-<entry endPc="268436418" name="NumSamples" stackId="1" startPc="268436310"/>
-<entry endPc="268436490" name="i" stackId="2" startPc="268436449"/>
-<entry endPc="268436558" name="value" stackId="1" startPc="268436418"/>
-<entry endPc="268436623" name="value" stackId="1" startPc="268436558"/>
-<entry endPc="268436891" name="LSREGRESSION_SAMPLES" stackId="2" startPc="268436641"/>
-<entry endPc="268436891" name="AVGFILT_SAMPLES" stackId="1" startPc="268436641"/>
-<entry endPc="268436984" name="paramValue" stackId="3" startPc="268436896"/>
-<entry endPc="268436985" name="defaultValue" stackId="2" startPc="268436892"/>
-<entry endPc="268436985" name="paramName" stackId="1" startPc="268436892"/>
-<entry endPc="268437316" name="valueView" stackId="3" startPc="268436989"/>
-<entry endPc="268437316" name="labelView" stackId="2" startPc="268436989"/>
-<entry endPc="268437317" name="dc" stackId="1" startPc="268436985"/>
-<entry endPc="268437924" name="InstantSlope" stackId="6" startPc="268437321"/>
-<entry endPc="268437924" name="rise" stackId="3" startPc="268437321"/>
-<entry endPc="268437924" name="theta" stackId="2" startPc="268437321"/>
-<entry endPc="268437924" name="speed" stackId="5" startPc="268437321"/>
-<entry endPc="268437924" name="run" stackId="4" startPc="268437321"/>
-<entry endPc="268437925" name="info" stackId="1" startPc="268437317"/>
-<entry endPc="268438309" name="filter_read" stackId="4" startPc="268437929"/>
-<entry endPc="268438309" name="label" stackId="3" startPc="268437929"/>
-<entry endPc="268438309" name="value" stackId="2" startPc="268437929"/>
-<entry endPc="268438310" name="dc" stackId="1" startPc="268437925"/>
-<entry endPc="268438735" name="rez_cmp_local_text_value" stackId="6" startPc="268438322"/>
-<entry endPc="268438735" name="rez_cmp_local_var_dc_getWidth" stackId="3" startPc="268438322"/>
-<entry endPc="268438735" name="rez_cmp_local_var_dc_getHeight" stackId="2" startPc="268438322"/>
-<entry endPc="268438735" name="rez_cmp_local_text_label" stackId="5" startPc="268438322"/>
-<entry endPc="268438735" name="rez_cmp_local_custom_drawable_10494298651701992939" stackId="4" startPc="268438322"/>
-<entry endPc="268438736" name="dc" stackId="1" startPc="268438310"/>
+<entry endPc="268435970" name="value" stackId="1" startPc="268435763"/>
+<entry endPc="268436184" name="i" stackId="5" startPc="268436023"/>
+<entry endPc="268436266" name="slope" stackId="6" startPc="268435974"/>
+<entry endPc="268436266" name="sumXY" stackId="4" startPc="268435974"/>
+<entry endPc="268436266" name="sumX2" stackId="3" startPc="268435974"/>
+<entry endPc="268436266" name="sumY" stackId="2" startPc="268435974"/>
+<entry endPc="268436266" name="sumX" stackId="1" startPc="268435974"/>
+<entry endPc="268436361" name="i" stackId="2" startPc="268436332"/>
+<entry endPc="268436375" name="NumSamples" stackId="1" startPc="268436267"/>
+<entry endPc="268436447" name="i" stackId="2" startPc="268436406"/>
+<entry endPc="268436515" name="value" stackId="1" startPc="268436375"/>
+<entry endPc="268436580" name="value" stackId="1" startPc="268436515"/>
+<entry endPc="268436861" name="LSREGRESSION_SAMPLES" stackId="2" startPc="268436598"/>
+<entry endPc="268436861" name="AVGFILT_SAMPLES" stackId="1" startPc="268436598"/>
+<entry endPc="268436954" name="paramValue" stackId="3" startPc="268436866"/>
+<entry endPc="268436955" name="defaultValue" stackId="2" startPc="268436862"/>
+<entry endPc="268436955" name="paramName" stackId="1" startPc="268436862"/>
+<entry endPc="268437286" name="valueView" stackId="3" startPc="268436959"/>
+<entry endPc="268437286" name="labelView" stackId="2" startPc="268436959"/>
+<entry endPc="268437287" name="dc" stackId="1" startPc="268436955"/>
+<entry endPc="268438041" name="InstantSlope" stackId="6" startPc="268437291"/>
+<entry endPc="268438041" name="rise" stackId="3" startPc="268437291"/>
+<entry endPc="268438041" name="theta" stackId="2" startPc="268437291"/>
+<entry endPc="268438041" name="maxAltStep" stackId="7" startPc="268437291"/>
+<entry endPc="268438041" name="speed" stackId="5" startPc="268437291"/>
+<entry endPc="268438041" name="run" stackId="4" startPc="268437291"/>
+<entry endPc="268438042" name="info" stackId="1" startPc="268437287"/>
+<entry endPc="268438426" name="filter_read" stackId="4" startPc="268438046"/>
+<entry endPc="268438426" name="label" stackId="3" startPc="268438046"/>
+<entry endPc="268438426" name="value" stackId="2" startPc="268438046"/>
+<entry endPc="268438427" name="dc" stackId="1" startPc="268438042"/>
+<entry endPc="268438852" name="rez_cmp_local_text_value" stackId="6" startPc="268438439"/>
+<entry endPc="268438852" name="rez_cmp_local_var_dc_getWidth" stackId="3" startPc="268438439"/>
+<entry endPc="268438852" name="rez_cmp_local_var_dc_getHeight" stackId="2" startPc="268438439"/>
+<entry endPc="268438852" name="rez_cmp_local_text_label" stackId="5" startPc="268438439"/>
+<entry endPc="268438852" name="rez_cmp_local_custom_drawable_98879573236238837161" stackId="4" startPc="268438439"/>
+<entry endPc="268438853" name="dc" stackId="1" startPc="268438427"/>
 </localVars>
 <annotations/>
 <dataEntryOffsetMappings>
 <dataEntry offset="87" parentId="" symbolId="globals" type="module"/>
-<dataEntry offset="190" parentId="globals" symbolId="Background" type="class"/>
-<dataEntry offset="261" parentId="globals" symbolId="SlopeApp" type="class"/>
-<dataEntry offset="332" parentId="globals" symbolId="LeastSquares" type="class"/>
-<dataEntry offset="419" parentId="globals" symbolId="MovingAverage" type="class"/>
-<dataEntry offset="522" parentId="globals" symbolId="Rez" type="module"/>
-<dataEntry offset="601" parentId="Rez" symbolId="Drawables" type="module"/>
-<dataEntry offset="640" parentId="Rez" symbolId="Menus" type="module"/>
-<dataEntry offset="671" parentId="Rez" symbolId="Fonts" type="module"/>
-<dataEntry offset="702" parentId="Rez" symbolId="Layouts" type="module"/>
-<dataEntry offset="741" parentId="Rez" symbolId="JsonData" type="module"/>
-<dataEntry offset="772" parentId="Rez" symbolId="Strings" type="module"/>
-<dataEntry offset="859" parentId="globals" symbolId="SlopeView" type="class"/>
+<dataEntry offset="198" parentId="globals" symbolId="Background" type="class"/>
+<dataEntry offset="269" parentId="globals" symbolId="SlopeApp" type="class"/>
+<dataEntry offset="340" parentId="globals" symbolId="LeastSquares" type="class"/>
+<dataEntry offset="427" parentId="globals" symbolId="MovingAverage" type="class"/>
+<dataEntry offset="530" parentId="globals" symbolId="Rez" type="module"/>
+<dataEntry offset="609" parentId="Rez" symbolId="Drawables" type="module"/>
+<dataEntry offset="648" parentId="Rez" symbolId="Menus" type="module"/>
+<dataEntry offset="679" parentId="Rez" symbolId="Fonts" type="module"/>
+<dataEntry offset="710" parentId="Rez" symbolId="Layouts" type="module"/>
+<dataEntry offset="749" parentId="Rez" symbolId="JsonData" type="module"/>
+<dataEntry offset="780" parentId="Rez" symbolId="Strings" type="module"/>
+<dataEntry offset="867" parentId="globals" symbolId="SlopeView" type="class"/>
 </dataEntryOffsetMappings>
 <functions>
 <functionEntry accessMode="public" name="initialize" parent="SlopeApp">
