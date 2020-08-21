@@ -57,6 +57,7 @@ class LeastSquares
 		else{slope=0.0f;}
 		//System.print("New value from LS: ");
 		//System.println(slope);
+		if (self.SamplesInBuffer<self.samples){slope=0.0f;}
 		return slope;
 	}
 }
@@ -78,7 +79,7 @@ class MovingAverage
 		self.SamplesInBuffer=0;
 	}
 
-	function add2Buffer(value)
+	private function add2Buffer(value)
 	{
 		for( var i = 0; i < self.samples-1; i += 1 ) {
 			self.buffer[i] = self.buffer[i+1];
@@ -101,7 +102,7 @@ class MovingAverage
 
 class SlopeView extends WatchUi.DataField {
 
-    hidden var SlopeFilter;
+    hidden var SlopeFilter,AltitudeFilter;
     hidden var gpsQuality;
     hidden var flagInsertNewValueToFilter;
     hidden var flagGoodData;
@@ -129,7 +130,8 @@ class SlopeView extends WatchUi.DataField {
         var LSREGRESSION_SAMPLES = self.getParameter("LSREGRESSION_SAMPLES", __NUMSAMPLES_LSREG__);
 
 
-        self.SlopeFilter=new MovingAverage( AVGFILT_SAMPLES );
+        self.SlopeFilter=new MovingAverage( 1 );
+        self.AltitudeFilter=new MovingAverage( AVGFILT_SAMPLES );
 		self.LSRegression=new LeastSquares( LSREGRESSION_SAMPLES );
 
         flagInsertNewValueToFilter=false;
@@ -187,6 +189,7 @@ class SlopeView extends WatchUi.DataField {
     	var speed=0.0f;
     	var InstantSlope=0.0f;
 		var maxAltStep=0.0f;
+		var IncompatibleDevice=false;
 
     	flagGoodData=true;
     	flagInsertNewValueToFilter=false;
@@ -223,23 +226,30 @@ class SlopeView extends WatchUi.DataField {
         		flagGoodData=false;
         	}
         	self.prevElapsedDistance=info.elapsedDistance; // this is to avoid entering two points with the same X coordinates to the Regressor
+
     	}else{
     		flagGoodData=false;
+    		IncompatibleDevice=true;
 		}
 
         if(info has :altitude ){
             if(info.altitude  == null){flagGoodData=false;}
-            else if ((info.altitude-self.prevElevation>maxAltStep) or (info.altitude-self.prevElevation<-maxAltStep)){
-            	flagGoodData=false; // this avoids entering values with too much variation in the altitude
-        	}
+//            else if ((info.altitude-self.prevElevation>maxAltStep) or (info.altitude-self.prevElevation<-maxAltStep)){
+//            	flagGoodData=false; // this avoids entering values with too much variation in the altitude
+//        	}
         	if(info.altitude  != null){self.prevElevation=info.altitude;}
         }else{
         	flagGoodData=false;
+        	IncompatibleDevice=true;
     	}
 
 		if (flagGoodData){
-			self.LSRegression.add2Buffer({"x"=>info.elapsedDistance,"y"=>info.altitude});
+			self.AltitudeFilter.addSample(info.altitude);
+			self.LSRegression.add2Buffer({"x"=>info.elapsedDistance,"y"=>self.AltitudeFilter.getValue()});
 			flagInsertNewValueToFilter=true;
+			System.print("We are at: ");
+			System.print(info.elapsedDistance);
+			System.println(" m from beginning");
 		}
 
         if (flagInsertNewValueToFilter ){

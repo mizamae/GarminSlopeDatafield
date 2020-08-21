@@ -1,4 +1,4 @@
 <properties>
-  <property id="AVGFILT_SAMPLES" type="number">5</property>
+  <property id="AVGFILT_SAMPLES" type="number">10</property>
   <property id="LSREGRESSION_SAMPLES" type="number">20</property>
 </properties>
