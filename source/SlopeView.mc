@@ -156,12 +156,47 @@ class SlopeView extends WatchUi.DataField {
     // Set your layout here. Anytime the size of obscurity of
     // the draw context is changed this will be called.
     function onLayout(dc) {
+
+//    	var obscurityFlags = DataField.getObscurityFlags();
+//
+//        // Top left quadrant so we'll use the top left layout
+//        if (obscurityFlags == (OBSCURE_TOP | OBSCURE_LEFT)) {
+//            View.setLayout(Rez.Layouts.TopLeftLayout(dc));
+//
+//        // Top right quadrant so we'll use the top right layout
+//        } else if (obscurityFlags == (OBSCURE_TOP | OBSCURE_RIGHT)) {
+//            View.setLayout(Rez.Layouts.TopRightLayout(dc));
+//
+//        // Bottom left quadrant so we'll use the bottom left layout
+//        } else if (obscurityFlags == (OBSCURE_BOTTOM | OBSCURE_LEFT)) {
+//            View.setLayout(Rez.Layouts.BottomLeftLayout(dc));
+//
+//        // Bottom right quadrant so we'll use the bottom right layout
+//        } else if (obscurityFlags == (OBSCURE_BOTTOM | OBSCURE_RIGHT)) {
+//            View.setLayout(Rez.Layouts.BottomRightLayout(dc));
+//
+//        // Use the generic, centered layout
+//        } else {
+//            View.setLayout(Rez.Layouts.MainLayout(dc));
+//        }
         View.setLayout(Rez.Layouts.MainLayout(dc));
         var labelView = View.findDrawableById("label");
         var valueView = View.findDrawableById("value");
 
 
-        if (dc.getHeight() >= 89){
+//		System.print("DC height is: ");
+//		System.println(dc.getHeight());
+//
+//		System.print("DC width is: ");
+//		System.println(dc.getWidth());
+
+		if (dc.getHeight() >= 110){
+            labelView.locY = labelView.locY - 40;
+            valueView.locY = valueView.locY + 7;
+            if (dc.getWidth() >=120){valueView.setFont(Graphics.FONT_NUMBER_HOT);}
+            else {valueView.setFont(Graphics.FONT_NUMBER_MILD);}
+        }
+        else if (dc.getHeight() >= 89){
             labelView.locY = labelView.locY - 30;
             valueView.locY = valueView.locY + 7;
             valueView.setFont(Graphics.FONT_NUMBER_HOT);
