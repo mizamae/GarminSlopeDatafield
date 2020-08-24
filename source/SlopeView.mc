@@ -8,6 +8,34 @@ const __NUMSAMPLES_AVGFILT__	=	5;
 const __NUMSAMPLES_LSREG__	=	10;
 const __MAX_ELEVATION_STEP__ = 0.5;
 
+class LPF
+{
+	protected var kf;
+	protected var OUT;
+	protected var isInitizalized;
+	protected var NumSamples;
+
+	function initialize( kf ) {
+		self.kf = kf;
+		self.OUT = 0.0f;
+		self.isInitizalized = false;
+		self.NumSamples= 0;
+	}
+
+	function addSample(value)
+	{
+		if (self.NumSamples <= 10){self.OUT = value;}
+		else{self.OUT = (self.OUT - value)*(self.kf) + value;}
+
+		self.NumSamples++;
+	}
+
+	function getValue()
+	{
+		return self.OUT;
+	}
+}
+
 class LeastSquares
 {
 	protected var samples;
@@ -117,7 +145,10 @@ class SlopeView extends WatchUi.DataField {
     }
     // Field ID from resources.
 	const SLOPE_FIELD_ID = 0;
+	const ALTITUDE_FIELD_ID = 1;
+
 	hidden var mSlopeField;
+	hidden var mAltitudeField;
 
     function initialize() {
         DataField.initialize();
@@ -126,12 +157,11 @@ class SlopeView extends WatchUi.DataField {
 		self.prevElevation=0.0f;
 
         // properties
-        var AVGFILT_SAMPLES = self.getParameter("AVGFILT_SAMPLES", __NUMSAMPLES_AVGFILT__);
         var LSREGRESSION_SAMPLES = self.getParameter("LSREGRESSION_SAMPLES", __NUMSAMPLES_LSREG__);
 
 
         self.SlopeFilter=new MovingAverage( 1 );
-        self.AltitudeFilter=new MovingAverage( AVGFILT_SAMPLES );
+        self.AltitudeFilter=new LPF( 0.97 );
 		self.LSRegression=new LeastSquares( LSREGRESSION_SAMPLES );
 
         flagInsertNewValueToFilter=false;
@@ -139,6 +169,7 @@ class SlopeView extends WatchUi.DataField {
 
         // this creates the field to be exported to Garmin Connect
         self.mSlopeField = createField("current_slope", SLOPE_FIELD_ID, FitContributor.DATA_TYPE_FLOAT, { :mesgType=>FitContributor.MESG_TYPE_RECORD, :units=>"%" });
+        self.mAltitudeField = createField("filtered_altitude", ALTITUDE_FIELD_ID, FitContributor.DATA_TYPE_FLOAT, { :mesgType=>FitContributor.MESG_TYPE_RECORD, :units=>"m" });
     }
 
 	function getParameter(paramName, defaultValue)
@@ -269,9 +300,6 @@ class SlopeView extends WatchUi.DataField {
 
         if(info has :altitude ){
             if(info.altitude  == null){flagGoodData=false;}
-//            else if ((info.altitude-self.prevElevation>maxAltStep) or (info.altitude-self.prevElevation<-maxAltStep)){
-//            	flagGoodData=false; // this avoids entering values with too much variation in the altitude
-//        	}
         	if(info.altitude  != null){self.prevElevation=info.altitude;}
         }else{
         	flagGoodData=false;
@@ -284,11 +312,16 @@ class SlopeView extends WatchUi.DataField {
 			flagInsertNewValueToFilter=true;
 			System.print("We are at: ");
 			System.print(info.elapsedDistance);
-			System.println(" m from beginning");
+			System.print(" m from beginning - ");
+			System.print("Altitude filtered: ");
+			System.println(self.AltitudeFilter.getValue());
 		}
 
         if (flagInsertNewValueToFilter ){
         	self.SlopeFilter.addSample(self.LSRegression.getValue()*100.0f);
+        	var filter_read = self.SlopeFilter.getValue();
+			self.mSlopeField.setData(filter_read);
+			self.mAltitudeField.setData(self.AltitudeFilter.getValue());
         }
     }
 
@@ -313,7 +346,6 @@ class SlopeView extends WatchUi.DataField {
         }
         var filter_read = self.SlopeFilter.getValue();
 		value.setText(filter_read.format("%.1f")+"%");
-		self.mSlopeField.setData(filter_read);
 
         // Call parent's onUpdate(dc) to redraw the layout
         View.onUpdate(dc);

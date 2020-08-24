@@ -3,7 +3,6 @@
 
     <string id="label">My Value</string>
     
-    <string id="AVGFILT_SAMPLES">Number of samples to perform the moving average filter</string>
     <string id="LSREGRESSION_SAMPLES">Number of samples to estimate the slope tendency</string>
     
 	<string id="slope_label">Slope [%]</string>

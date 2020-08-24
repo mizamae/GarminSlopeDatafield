@@ -1,10 +1,7 @@
 <settings>	
-	<setting propertyKey="@Properties.AVGFILT_SAMPLES" title="@Strings.AVGFILT_SAMPLES">
-    	<settingConfig type="numeric" min="2" max="20" />
-	</setting>
- 
+
 	<setting propertyKey="@Properties.LSREGRESSION_SAMPLES" title="@Strings.LSREGRESSION_SAMPLES">
-    	<settingConfig type="numeric" min="5" max="100" />
+    	<settingConfig type="numeric" min="2" max="50" />
 	</setting>
 	
 <!-- 	<setting propertyKey="@Properties.RISE_CALCULATION" title="@Strings.RISE_CALCULATION"> -->
