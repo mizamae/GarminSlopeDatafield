@@ -2,4 +2,7 @@
 	<fitField id="0" displayInChart="true" sortOrder = "0" precision="1"
 	chartTitle="@Strings.slope_graph_label" dataLabel="@Strings.slope_label"
 	unitLabel="@Strings.slope_units" fillColor="#FF0000" />
+	<fitField id="1" displayInChart="true" sortOrder = "1" precision="1"
+	chartTitle="@Strings.altitude_graph_label" dataLabel="@Strings.altitude_label"
+	unitLabel="@Strings.altitude_units" fillColor="#00FF00" />
 </fitContributions>

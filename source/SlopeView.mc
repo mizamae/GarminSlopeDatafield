@@ -6,28 +6,31 @@ using Toybox.Position;
 
 const __NUMSAMPLES_AVGFILT__	=	5;
 const __NUMSAMPLES_LSREG__	=	10;
-const __MAX_ELEVATION_STEP__ = 0.5;
 
 class LPF
 {
 	protected var kf;
 	protected var OUT;
-	protected var isInitizalized;
 	protected var NumSamples;
 
 	function initialize( kf ) {
 		self.kf = kf;
 		self.OUT = 0.0f;
-		self.isInitizalized = false;
 		self.NumSamples= 0;
 	}
 
 	function addSample(value)
 	{
-		if (self.NumSamples <= 10){self.OUT = value;}
+		if (self.NumSamples <= 10){
+			self.OUT = value;
+			self.NumSamples++;
+		}
 		else{self.OUT = (self.OUT - value)*(self.kf) + value;}
+	}
 
-		self.NumSamples++;
+	function setParameter(value)
+	{
+		if ((value>0) and (value<1)){	self.kf = value;}
 	}
 
 	function getValue()
@@ -136,8 +139,7 @@ class SlopeView extends WatchUi.DataField {
     hidden var flagGoodData;
 	hidden var LSRegression;
 	hidden var prevElapsedDistance;
-	hidden var prevElevation;
-
+	hidden var flagIncompatibleDevice;
     enum{
     	NO_GPS_DATA,
     	GPS_POOR,
@@ -154,18 +156,19 @@ class SlopeView extends WatchUi.DataField {
         DataField.initialize();
 
 		self.prevElapsedDistance=0.0f;
-		self.prevElevation=0.0f;
 
         // properties
         var LSREGRESSION_SAMPLES = self.getParameter("LSREGRESSION_SAMPLES", __NUMSAMPLES_LSREG__);
+		var ALTITUDE_FILTER_COEFF = self.getParameter("ALTITUDE_FILTER_COEFF", 98)/100.0f;
 
 
         self.SlopeFilter=new MovingAverage( 1 );
-        self.AltitudeFilter=new LPF( 0.97 );
+        self.AltitudeFilter=new LPF( ALTITUDE_FILTER_COEFF );
 		self.LSRegression=new LeastSquares( LSREGRESSION_SAMPLES );
 
         flagInsertNewValueToFilter=false;
         flagGoodData=false;
+		flagIncompatibleDevice=false;
 
         // this creates the field to be exported to Garmin Connect
         self.mSlopeField = createField("current_slope", SLOPE_FIELD_ID, FitContributor.DATA_TYPE_FLOAT, { :mesgType=>FitContributor.MESG_TYPE_RECORD, :units=>"%" });
@@ -254,8 +257,7 @@ class SlopeView extends WatchUi.DataField {
     	var run=0.0f;
     	var speed=0.0f;
     	var InstantSlope=0.0f;
-		var maxAltStep=0.0f;
-		var IncompatibleDevice=false;
+
 
     	flagGoodData=true;
     	flagInsertNewValueToFilter=false;
@@ -284,8 +286,8 @@ class SlopeView extends WatchUi.DataField {
 			else{speed=5;}
 		}else{speed=5;}
 
-		if (speed>15){maxAltStep=__MAX_ELEVATION_STEP__*2.0;}
-		else{maxAltStep=__MAX_ELEVATION_STEP__;}
+		if (speed>15){self.AltitudeFilter.setParameter(0.95);}
+		else{self.AltitudeFilter.setParameter(0.97);}
 
 		if (info has :elapsedDistance){
         	if ((info.elapsedDistance  == null) or (info.elapsedDistance  <= 0.1) or (self.prevElapsedDistance==info.elapsedDistance)){
@@ -295,15 +297,14 @@ class SlopeView extends WatchUi.DataField {
 
     	}else{
     		flagGoodData=false;
-    		IncompatibleDevice=true;
+    		flagIncompatibleDevice=true;
 		}
 
         if(info has :altitude ){
             if(info.altitude  == null){flagGoodData=false;}
-        	if(info.altitude  != null){self.prevElevation=info.altitude;}
         }else{
         	flagGoodData=false;
-        	IncompatibleDevice=true;
+        	flagIncompatibleDevice=true;
     	}
 
 		if (flagGoodData){

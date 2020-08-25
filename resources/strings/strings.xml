@@ -4,10 +4,15 @@
     <string id="label">My Value</string>
     
     <string id="LSREGRESSION_SAMPLES">Number of samples to estimate the slope tendency</string>
+    <string id="ALTITUDE_FILTER_COEFF">Coefficient to filter the altitude data from GPS</string>
     
 	<string id="slope_label">Slope [%]</string>
 	<string id="slope_graph_label">Slope</string>
 	<string id="slope_units">%</string>
+	
+	<string id="altitude_label">Altitude filtered [m]</string>
+	<string id="altitude_graph_label">Altitude filtered</string>
+	<string id="altitude_units">m</string>
 	
 </strings>
 

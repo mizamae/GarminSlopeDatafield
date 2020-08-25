@@ -4,6 +4,10 @@
     	<settingConfig type="numeric" min="2" max="50" />
 	</setting>
 	
+	<setting propertyKey="@Properties.ALTITUDE_FILTER_COEFF" title="@Strings.ALTITUDE_FILTER_COEFF">
+    	<settingConfig type="numeric" min="0" max="99" />
+	</setting>
+	
 <!-- 	<setting propertyKey="@Properties.RISE_CALCULATION" title="@Strings.RISE_CALCULATION"> -->
 <!-- 		<settingConfig type="list"> -->
 <!-- 			<listEntry value="0">@Strings.Rise0</listEntry> -->
