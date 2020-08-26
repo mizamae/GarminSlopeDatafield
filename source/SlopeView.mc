@@ -311,11 +311,11 @@ class SlopeView extends WatchUi.DataField {
 			self.AltitudeFilter.addSample(info.altitude);
 			self.LSRegression.add2Buffer({"x"=>info.elapsedDistance,"y"=>self.AltitudeFilter.getValue()});
 			flagInsertNewValueToFilter=true;
-			System.print("We are at: ");
-			System.print(info.elapsedDistance);
-			System.print(" m from beginning - ");
-			System.print("Altitude filtered: ");
-			System.println(self.AltitudeFilter.getValue());
+//			System.print("We are at: ");
+//			System.print(info.elapsedDistance);
+//			System.print(" m from beginning - ");
+//			System.print("Altitude filtered: ");
+//			System.println(self.AltitudeFilter.getValue());
 		}
 
         if (flagInsertNewValueToFilter ){

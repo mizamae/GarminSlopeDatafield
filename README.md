@@ -1,5 +1,5 @@
 # Datafield for Garmin devices
-Datafield that calculates the slope [in %] that you are facing to give you an idea how hard you are climbing.
+Datafield for Garmin devices that calculates the slope (or grade) of the hill you are walking on.
 It has two configuration parameters that can help you tune the calculation according to your device characteristics.
 Optimal values for the parameters are those left as default (at least for my Forerunner 735xt device).
 
