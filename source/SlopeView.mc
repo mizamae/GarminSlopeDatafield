@@ -78,10 +78,10 @@ class LeastSquares
 	{
 		var sumX=0.0f,sumY=0.0f,sumX2=0.0f,sumXY=0.0f;
 		for( var i = 0; i < self.samples; i += 1 ) {
-			sumX+=1.0f*self.buffer[i]["x"];
+			sumX+=1.0f*(self.buffer[i]["x"]-self.buffer[0]["x"]);
 			sumY+=1.0f*self.buffer[i]["y"];
-			sumX2+=1.0f*(self.buffer[i]["x"])*(self.buffer[i]["x"]);
-			sumXY+=1.0f*(self.buffer[i]["x"])*(self.buffer[i]["y"]);
+			sumX2+=1.0f*(self.buffer[i]["x"]-self.buffer[0]["x"])*(self.buffer[i]["x"]-self.buffer[0]["x"]);
+			sumXY+=1.0f*(self.buffer[i]["x"]-self.buffer[0]["x"])*(self.buffer[i]["y"]);
 		}
 		var slope;
 		if (self.samples*sumX2-sumX*sumX != 0.0f){	slope=(1.0f*self.samples*sumXY-sumX*sumY)/(self.samples*sumX2-sumX*sumX);}
@@ -283,11 +283,11 @@ class SlopeView extends WatchUi.DataField {
 
 		if (info has :currentSpeed){
 			if(info.currentSpeed  != null){speed=info.currentSpeed*3.6;}
-			else{speed=5;}
-		}else{speed=5;}
+			else{speed=5.0f;}
+		}else{speed=5.0f;}
 
-		if (speed>15){self.AltitudeFilter.setParameter(0.95);}
-		else{self.AltitudeFilter.setParameter(0.97);}
+//		if (speed>15.0f){self.AltitudeFilter.setParameter(0.95);}
+//		else{self.AltitudeFilter.setParameter(0.97);}
 
 		if (info has :elapsedDistance){
         	if ((info.elapsedDistance  == null) or (info.elapsedDistance  <= 0.1) or (self.prevElapsedDistance==info.elapsedDistance)){
@@ -341,7 +341,6 @@ class SlopeView extends WatchUi.DataField {
         // Set the foreground color
 		if (getBackgroundColor() == Graphics.COLOR_BLACK) {
             value.setColor(Graphics.COLOR_WHITE);
-
         } else {
             value.setColor(Graphics.COLOR_BLACK);
         }
