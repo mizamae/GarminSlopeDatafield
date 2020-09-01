@@ -22,7 +22,7 @@ class LPF
 	function addSample(value)
 	{
 		if (self.NumSamples <= 10){
-			self.OUT = value;
+			self.setValue(value);
 			self.NumSamples++;
 		}
 		else{self.OUT = (self.OUT - value)*(self.kf) + value;}
@@ -31,6 +31,11 @@ class LPF
 	function setParameter(value)
 	{
 		if ((value>0) and (value<1)){	self.kf = value;}
+	}
+
+	function setValue(value)
+	{
+		self.OUT = value;
 	}
 
 	function getValue()
@@ -139,11 +144,10 @@ class MovingAverage
 
 class SlopeView extends WatchUi.DataField {
 
-    hidden var SlopeFilter,AltitudeFilter;
+    hidden var SlopeFilterPublish,AltitudeFilterDisplay;
     hidden var gpsQuality;
-    hidden var flagInsertNewValueToFilter;
     hidden var flagGoodData;
-	hidden var LSRegression;
+	hidden var SlopeRegressionDisplay;
 	hidden var prevElapsedDistance;
 	hidden var flagIncompatibleDevice;
     enum{
@@ -165,14 +169,13 @@ class SlopeView extends WatchUi.DataField {
 
         // properties
         var LSREGRESSION_SAMPLES = self.getParameter("LSREGRESSION_SAMPLES", __NUMSAMPLES_LSREG__);
-		var ALTITUDE_FILTER_COEFF = self.getParameter("ALTITUDE_FILTER_COEFF", 98)/100.0f;
+		var ALTITUDE_FILTER_COEFF = self.getParameter("ALTITUDE_FILTER_COEFF", 50)/100.0f;
 
 
-        self.SlopeFilter=new MovingAverage( 1 );
-        self.AltitudeFilter=new LPF( ALTITUDE_FILTER_COEFF );
-		self.LSRegression=new LeastSquares( LSREGRESSION_SAMPLES );
+        self.SlopeFilterPublish=new MovingAverage( __NUMSAMPLES_AVGFILT__ );
+        self.AltitudeFilterDisplay=new LPF( ALTITUDE_FILTER_COEFF );
+		self.SlopeRegressionDisplay=new LeastSquares( LSREGRESSION_SAMPLES );
 
-        flagInsertNewValueToFilter=false;
         flagGoodData=false;
 		flagIncompatibleDevice=false;
 
@@ -266,7 +269,6 @@ class SlopeView extends WatchUi.DataField {
 
 
     	flagGoodData=true;
-    	flagInsertNewValueToFilter=false;
 
     	if (info has :currentLocationAccuracy){
     		if (info.currentLocationAccuracy  != null) {
@@ -292,8 +294,8 @@ class SlopeView extends WatchUi.DataField {
 			else{speed=5.0f;}
 		}else{speed=5.0f;}
 
-//		if (speed>15.0f){self.AltitudeFilter.setParameter(0.95);}
-//		else{self.AltitudeFilter.setParameter(0.97);}
+//		if (speed>15.0f){self.AltitudeFilterDisplay.setParameter(0.95);}
+//		else{self.AltitudeFilterDisplay.setParameter(0.97);}
 
 		if (info has :elapsedDistance){
         	if ((info.elapsedDistance  == null) or (info.elapsedDistance  <= 0.1) or (self.prevElapsedDistance==info.elapsedDistance)){
@@ -314,20 +316,14 @@ class SlopeView extends WatchUi.DataField {
     	}
 
 		if (flagGoodData){
-			self.AltitudeFilter.addSample(info.altitude);
-			self.LSRegression.add2Buffer({"x"=>info.elapsedDistance,"y"=>self.AltitudeFilter.getValue()});
-			flagInsertNewValueToFilter=true;
-//			System.print("We are at: ");
-//			System.print(info.elapsedDistance);
-//			System.print(" m from beginning - ");
-//			System.print("Altitude filtered: ");
-//			System.println(self.AltitudeFilter.getValue());
-		}
+			// LOAD DATA TO DISPLAY
+			self.AltitudeFilterDisplay.addSample(info.altitude);
+			self.SlopeRegressionDisplay.add2Buffer({"x"=>info.elapsedDistance,"y"=>self.AltitudeFilterDisplay.getValue()});
 
-        if (flagInsertNewValueToFilter ){
-        	self.SlopeFilter.addSample(self.LSRegression.getValue()*100.0f);
-			self.mSlopeField.setData(self.SlopeFilter.getValue());
-			self.mAltitudeField.setData(self.AltitudeFilter.getValue());
+			// PUBLISH DATA TO GARMIN CONNECT
+        	self.SlopeFilterPublish.addSample(self.SlopeRegressionDisplay.getValue()*100.0f);
+			self.mSlopeField.setData(self.SlopeFilterPublish.getValue());
+			self.mAltitudeField.setData(self.AltitudeFilterDisplay.getValue());
         }
     }
 
@@ -349,9 +345,9 @@ class SlopeView extends WatchUi.DataField {
         } else {
             value.setColor(Graphics.COLOR_BLACK);
         }
-        //var filter_read = self.SlopeFilter.getValue();
+        //var filter_read = self.SlopeFilterPublish.getValue();
         //value.setText(filter_read.format("%.1f")+"%");
-		var reading = self.LSRegression.getValue()*100.0f;
+		var reading = self.SlopeRegressionDisplay.getValue()*100.0f;
 		value.setText(reading.format("%.1f")+"%");
 
         // Call parent's onUpdate(dc) to redraw the layout

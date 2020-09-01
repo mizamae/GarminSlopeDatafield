@@ -10,6 +10,10 @@ Optimal values for the parameters are those left as default (at least for my For
 
 ![alt text](https://github.com/mizamae/GarminSlopeDatafield/blob/master/manual/filter_effect.png)
 
+The unitary response of the filter depending on the filter coefficient is depicted in the following picture. It can be seen how as the coefficient increases, it also increases the number of samples it takes to reach close to final value (1 in this case).
+
+![alt text](https://github.com/mizamae/GarminSlopeDatafield/blob/master/manual/filter_effect2.png)
+
 The colour of the label "Slope" indicates the quality of the GPS coverage:
 
 - <b>Red:</b> indicates no GPS signal is received
