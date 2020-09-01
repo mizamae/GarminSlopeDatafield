@@ -44,6 +44,7 @@ class LeastSquares
 	protected var samples;
 	protected var buffer;
 	protected var SamplesInBuffer;
+	protected var OUT;
 
 	function initialize( NumSamples ) {
 		self.samples = NumSamples;
@@ -52,6 +53,8 @@ class LeastSquares
 			self.buffer[i] = {"x" => 0.0f,"y" => 0.0f};
 		}
 		self.SamplesInBuffer=0;
+		self.OUT=0.0f;
+
 	 }
 
 	 function add2Buffer(value)
@@ -72,9 +75,10 @@ class LeastSquares
 
 		//System.print("New value into LS buffer: ");
 		//System.println(value);
+		self.updateCalculus();
 	}
 
-	function getValue()
+	private function updateCalculus()
 	{
 		var sumX=0.0f,sumY=0.0f,sumX2=0.0f,sumXY=0.0f;
 		for( var i = 0; i < self.samples; i += 1 ) {
@@ -83,13 +87,15 @@ class LeastSquares
 			sumX2+=1.0f*(self.buffer[i]["x"]-self.buffer[0]["x"])*(self.buffer[i]["x"]-self.buffer[0]["x"]);
 			sumXY+=1.0f*(self.buffer[i]["x"]-self.buffer[0]["x"])*(self.buffer[i]["y"]);
 		}
-		var slope;
-		if (self.samples*sumX2-sumX*sumX != 0.0f){	slope=(1.0f*self.samples*sumXY-sumX*sumY)/(self.samples*sumX2-sumX*sumX);}
-		else{slope=0.0f;}
-		//System.print("New value from LS: ");
-		//System.println(slope);
-		if (self.SamplesInBuffer<self.samples){slope=0.0f;}
-		return slope;
+		var out;
+		if (self.samples*sumX2-sumX*sumX != 0.0f){	out=(1.0f*self.samples*sumXY-sumX*sumY)/(self.samples*sumX2-sumX*sumX);}
+		else{out=0.0f;}
+		self.OUT = out;
+	}
+
+	function getValue()
+	{
+		return self.OUT;
 	}
 }
 class MovingAverage
@@ -320,8 +326,7 @@ class SlopeView extends WatchUi.DataField {
 
         if (flagInsertNewValueToFilter ){
         	self.SlopeFilter.addSample(self.LSRegression.getValue()*100.0f);
-        	var filter_read = self.SlopeFilter.getValue();
-			self.mSlopeField.setData(filter_read);
+			self.mSlopeField.setData(self.SlopeFilter.getValue());
 			self.mAltitudeField.setData(self.AltitudeFilter.getValue());
         }
     }
@@ -344,8 +349,10 @@ class SlopeView extends WatchUi.DataField {
         } else {
             value.setColor(Graphics.COLOR_BLACK);
         }
-        var filter_read = self.SlopeFilter.getValue();
-		value.setText(filter_read.format("%.1f")+"%");
+        //var filter_read = self.SlopeFilter.getValue();
+        //value.setText(filter_read.format("%.1f")+"%");
+		var reading = self.LSRegression.getValue()*100.0f;
+		value.setText(reading.format("%.1f")+"%");
 
         // Call parent's onUpdate(dc) to redraw the layout
         View.onUpdate(dc);
