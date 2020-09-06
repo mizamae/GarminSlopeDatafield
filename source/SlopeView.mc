@@ -294,7 +294,7 @@ class SlopeView extends WatchUi.DataField {
 			else{speed=5.0f;}
 		}else{speed=5.0f;}
 
-//		if (speed>15.0f){self.AltitudeFilterDisplay.setParameter(0.95);}
+		if (speed<1.0f){flagGoodData=false;}
 //		else{self.AltitudeFilterDisplay.setParameter(0.97);}
 
 		if (info has :elapsedDistance){
