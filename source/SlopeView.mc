@@ -49,13 +49,13 @@ class LeastSquares
 	protected var samples;
 	protected var buffer;
 	protected var SamplesInBuffer;
-	protected var OUT;
+	var OUT;
 
 	function initialize( NumSamples ) {
 		self.samples = NumSamples;
 		self.buffer = new [self.samples];
 		for( var i = 0; i < self.samples; i += 1 ) {
-			self.buffer[i] = {"x" => 0.0f,"y" => 0.0f};
+			self.buffer[i] = [ 0.0f,0.0f];
 		}
 		self.SamplesInBuffer=0;
 		self.OUT=0.0f;
@@ -77,20 +77,18 @@ class LeastSquares
 		self.buffer[self.samples-1]=value;
 		if (self.SamplesInBuffer<self.samples)
 		{self.SamplesInBuffer++;}
-
-		//System.print("New value into LS buffer: ");
-		//System.println(value);
-		self.updateCalculus();
+		else
+		{self.updateCalculus();}
 	}
 
-	private function updateCalculus()
+	function updateCalculus()
 	{
 		var sumX=0.0f,sumY=0.0f,sumX2=0.0f,sumXY=0.0f;
 		for( var i = 0; i < self.samples; i += 1 ) {
-			sumX+=1.0f*(self.buffer[i]["x"]-self.buffer[0]["x"]);
-			sumY+=1.0f*self.buffer[i]["y"];
-			sumX2+=1.0f*(self.buffer[i]["x"]-self.buffer[0]["x"])*(self.buffer[i]["x"]-self.buffer[0]["x"]);
-			sumXY+=1.0f*(self.buffer[i]["x"]-self.buffer[0]["x"])*(self.buffer[i]["y"]);
+			sumX+=1.0f*(self.buffer[i][0]-self.buffer[0][0]);
+			sumY+=1.0f*self.buffer[i][1];
+			sumX2+=1.0f*(self.buffer[i][0]-self.buffer[0][0])*(self.buffer[i][0]-self.buffer[0][0]);
+			sumXY+=1.0f*(self.buffer[i][0]-self.buffer[0][0])*(self.buffer[i][1]);
 		}
 		var out;
 		if (self.samples*sumX2-sumX*sumX != 0.0f){	out=(1.0f*self.samples*sumXY-sumX*sumY)/(self.samples*sumX2-sumX*sumX);}
@@ -279,14 +277,17 @@ class SlopeView extends WatchUi.DataField {
     			}else{
     				gpsQuality=NO_GPS_DATA;
     				flagGoodData=false;
+    				System.println("BAD DATA DUE TO GPS QUALITY");
 				}
     		}else{
     			gpsQuality=NO_GPS_DATA;
     			flagGoodData=false;
+    			System.println("BAD DATA DUE TO GPS QUALITY");
 			}
     	}else{
     		gpsQuality=NO_GPS_DATA;
     		flagGoodData=false;
+    		System.println("BAD DATA DUE TO GPS QUALITY");
 		}
 
 		if (info has :currentSpeed){
@@ -300,6 +301,8 @@ class SlopeView extends WatchUi.DataField {
 		if (info has :elapsedDistance){
         	if ((info.elapsedDistance  == null) or (info.elapsedDistance  <= 0.1) or (self.prevElapsedDistance==info.elapsedDistance)){
         		flagGoodData=false;
+        		System.print("BAD DATA DUE TO ELAPSED DISTANCE ");
+        		System.println(info.elapsedDistance);
         	}
         	self.prevElapsedDistance=info.elapsedDistance; // this is to avoid entering two points with the same X coordinates to the Regressor
 
@@ -318,7 +321,7 @@ class SlopeView extends WatchUi.DataField {
 		if (flagGoodData){
 			// LOAD DATA TO DISPLAY
 			self.AltitudeFilterDisplay.addSample(info.altitude);
-			self.SlopeRegressionDisplay.add2Buffer({"x"=>info.elapsedDistance,"y"=>self.AltitudeFilterDisplay.getValue()});
+			self.SlopeRegressionDisplay.add2Buffer([info.elapsedDistance,self.AltitudeFilterDisplay.getValue()]);
 
 			// PUBLISH DATA TO GARMIN CONNECT
         	self.SlopeFilterPublish.addSample(self.SlopeRegressionDisplay.getValue()*100.0f);
