@@ -1,4 +1,4 @@
 <properties>
 	<property id="LSREGRESSION_SAMPLES" type="number">5</property>
-	<property id="ALTITUDE_FILTER_COEFF" type="number">50</property>
+	<property id="ALTITUDE_FILTER_COEFF" type="number">60</property>
 </properties>

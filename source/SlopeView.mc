@@ -5,7 +5,12 @@ using Toybox.FitContributor;
 using Toybox.Position;
 
 const __NUMSAMPLES_AVGFILT__	=	5;
-const __NUMSAMPLES_LSREG__	=	10;
+const __NUMSAMPLES_LSREG__	=	5;
+const __MIN_DISTANCE_TO_SAMPLE__ = 20.0;	// minimum elapsed distance to include data in regressor
+const __MAX_ALT_DIFFERENCE__ = 10.0; 		// maximum altitude difference between two consecutive samples
+
+const __TESTING__ = true;
+const __TEST_STR__= "v1.1.0";
 
 class LPF
 {
@@ -46,17 +51,21 @@ class LPF
 
 class LeastSquares
 {
-	protected var samples;
-	protected var buffer;
-	protected var SamplesInBuffer;
+	private var samples,MinXIncr,MaxYIncr;
+	private var buffer,bufferScaled;
+	private var SamplesInBuffer;
 	var OUT;
 
-	function initialize( NumSamples ) {
+	function initialize( NumSamples,MinXIncr,MaxYIncr ) {
 		self.samples = NumSamples;
+		self.MinXIncr = MinXIncr;
+		self.MaxYIncr = MaxYIncr;
+
 		self.buffer = new [self.samples];
 		for( var i = 0; i < self.samples; i += 1 ) {
 			self.buffer[i] = [ 0.0f,0.0f];
 		}
+		self.bufferScaled=false;
 		self.SamplesInBuffer=0;
 		self.OUT=0.0f;
 
@@ -69,19 +78,66 @@ class LeastSquares
 			for( var i = 0; i < self.samples; i += 1 ) {
 				self.buffer[i] = value;
 			}
+			self.SamplesInBuffer++;
 		}
 
-		for( var i = 0; i < self.samples-1; i += 1 ) {
-			self.buffer[i] = self.buffer[i+1];
+		if (value[0]-self.buffer[self.samples-1][0] >= self.MinXIncr)
+		{
+			// THIS APPLIES TO THE INITIAL STAGE WHERE GPS DATA CAN GIVE BIG JUMPS ON ALTITUDE VALUES
+			if ((self.MaxYIncr>0.0) and (self.buffer[self.samples-1][1]-value[1]).abs()>self.MaxYIncr){
+				//System.print("BUFFER RESCALED TO VALUE ");
+				//System.println(value[1]);
+				var bufferMean=0.0;
+				for( var i = 0; i < self.samples-1; i += 1 ) {
+					bufferMean=bufferMean+self.buffer[i][1];
+				}
+				bufferMean=bufferMean/self.samples;
+
+				for( var i = 0; i < self.samples-1; i += 1 ) {
+					self.buffer[i][1]=value[1]+(self.buffer[i][1]-bufferMean);
+				}
+				self.bufferScaled=true;
+			}else{self.bufferScaled=false;}
+
+			for( var i = 0; i < self.samples-1; i += 1 ) {
+				self.buffer[i] = self.buffer[i+1];
+			}
+			self.buffer[self.samples-1]=value;
+			if (self.SamplesInBuffer<self.samples)
+			{self.SamplesInBuffer++;}
+			else
+			{
+				self.cleanBuffer();
+				self.updateCalculus();
+			}
 		}
-		self.buffer[self.samples-1]=value;
-		if (self.SamplesInBuffer<self.samples)
-		{self.SamplesInBuffer++;}
-		else
-		{self.updateCalculus();}
 	}
 
-	function updateCalculus()
+	private function cleanBuffer(){
+		if (self.MaxYIncr >= 0.0){
+			for( var i = 0; i < self.samples-1; i += 1 ) {
+				if (self.buffer[i][1]-self.buffer[i+1][1]>self.MaxYIncr){
+					System.print("BUFFER CLEANED ON DATA ");
+					System.print(i+1);
+					System.print(". ORIGINAL VALUE ");
+					System.println(self.buffer[i+1][1]);
+					self.buffer[i+1][1]=self.buffer[i][1]-self.MaxYIncr;
+				}else if (self.buffer[i][1]-self.buffer[i+1][1]<-self.MaxYIncr){
+					System.print("BUFFER CLEANED ON DATA ");
+					System.print(i+1);
+					System.print(". ORIGINAL VALUE ");
+					System.println(self.buffer[i+1][1]);
+					self.buffer[i+1][1]=self.buffer[i][1]+self.MaxYIncr;
+				}
+			}
+		}
+	}
+
+	private function clearBuffer(){
+		self.SamplesInBuffer=0;
+	}
+
+	private function updateCalculus()
 	{
 		var sumX=0.0f,sumY=0.0f,sumX2=0.0f,sumXY=0.0f;
 		for( var i = 0; i < self.samples; i += 1 ) {
@@ -94,6 +150,12 @@ class LeastSquares
 		if (self.samples*sumX2-sumX*sumX != 0.0f){	out=(1.0f*self.samples*sumXY-sumX*sumY)/(self.samples*sumX2-sumX*sumX);}
 		else{out=0.0f;}
 		self.OUT = out;
+		//self.clearBuffer();
+		System.print("NEW CALC BUFFER: ");
+		System.println(self.buffer);
+		System.print("CALC VALUE: ");
+		System.println(self.OUT);
+
 	}
 
 	function getValue()
@@ -172,7 +234,7 @@ class SlopeView extends WatchUi.DataField {
 
         self.SlopeFilterPublish=new MovingAverage( __NUMSAMPLES_AVGFILT__ );
         self.AltitudeFilterDisplay=new LPF( ALTITUDE_FILTER_COEFF );
-		self.SlopeRegressionDisplay=new LeastSquares( LSREGRESSION_SAMPLES );
+		self.SlopeRegressionDisplay=new LeastSquares( LSREGRESSION_SAMPLES , __MIN_DISTANCE_TO_SAMPLE__ , __MAX_ALT_DIFFERENCE__);
 
         flagGoodData=false;
 		flagIncompatibleDevice=false;
@@ -250,7 +312,9 @@ class SlopeView extends WatchUi.DataField {
 
 
         View.findDrawableById("label").setText("Slope");
-        View.findDrawableById("value").setText("---%");
+        if (__TESTING__)
+        {View.findDrawableById("value").setText(__TEST_STR__);}
+        else{View.findDrawableById("value").setText("---%");}
         return true;
     }
 
@@ -301,8 +365,8 @@ class SlopeView extends WatchUi.DataField {
 		if (info has :elapsedDistance){
         	if ((info.elapsedDistance  == null) or (info.elapsedDistance  <= 0.1) or (self.prevElapsedDistance==info.elapsedDistance)){
         		flagGoodData=false;
-        		System.print("BAD DATA DUE TO ELAPSED DISTANCE ");
-        		System.println(info.elapsedDistance);
+        		//System.print("BAD DATA DUE TO ELAPSED DISTANCE ");
+        		//System.println(info.elapsedDistance);
         	}
         	self.prevElapsedDistance=info.elapsedDistance; // this is to avoid entering two points with the same X coordinates to the Regressor
 
@@ -322,7 +386,6 @@ class SlopeView extends WatchUi.DataField {
 			// LOAD DATA TO DISPLAY
 			self.AltitudeFilterDisplay.addSample(info.altitude);
 			self.SlopeRegressionDisplay.add2Buffer([info.elapsedDistance,self.AltitudeFilterDisplay.getValue()]);
-
 			// PUBLISH DATA TO GARMIN CONNECT
         	self.SlopeFilterPublish.addSample(self.SlopeRegressionDisplay.getValue()*100.0f);
 			self.mSlopeField.setData(self.SlopeFilterPublish.getValue());
