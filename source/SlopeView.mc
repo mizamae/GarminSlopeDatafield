@@ -9,7 +9,7 @@ const __NUMSAMPLES_LSREG__	=	5;
 const __MIN_DISTANCE_TO_SAMPLE__ = 20.0;	// minimum elapsed distance to include data in regressor
 const __MAX_ALT_DIFFERENCE__ = 10.0; 		// maximum altitude difference between two consecutive samples
 
-const __TESTING__ = true;
+const __TESTING__ = false;
 const __TEST_STR__= "v1.1.0";
 
 class LPF
@@ -85,8 +85,10 @@ class LeastSquares
 		{
 			// THIS APPLIES TO THE INITIAL STAGE WHERE GPS DATA CAN GIVE BIG JUMPS ON ALTITUDE VALUES
 			if ((self.MaxYIncr>0.0) and (self.buffer[self.samples-1][1]-value[1]).abs()>self.MaxYIncr){
-				//System.print("BUFFER RESCALED TO VALUE ");
-				//System.println(value[1]);
+				if (__TESTING__){
+					System.print("BUFFER RESCALED TO VALUE ");
+					System.println(value[1]);
+				}
 				var bufferMean=0.0;
 				for( var i = 0; i < self.samples-1; i += 1 ) {
 					bufferMean=bufferMean+self.buffer[i][1];
@@ -117,16 +119,20 @@ class LeastSquares
 		if (self.MaxYIncr >= 0.0){
 			for( var i = 0; i < self.samples-1; i += 1 ) {
 				if (self.buffer[i][1]-self.buffer[i+1][1]>self.MaxYIncr){
-					System.print("BUFFER CLEANED ON DATA ");
-					System.print(i+1);
-					System.print(". ORIGINAL VALUE ");
-					System.println(self.buffer[i+1][1]);
+					if (__TESTING__){
+						System.print("BUFFER CLEANED ON DATA ");
+						System.print(i+1);
+						System.print(". ORIGINAL VALUE ");
+						System.println(self.buffer[i+1][1]);
+					}
 					self.buffer[i+1][1]=self.buffer[i][1]-self.MaxYIncr;
 				}else if (self.buffer[i][1]-self.buffer[i+1][1]<-self.MaxYIncr){
-					System.print("BUFFER CLEANED ON DATA ");
-					System.print(i+1);
-					System.print(". ORIGINAL VALUE ");
-					System.println(self.buffer[i+1][1]);
+					if (__TESTING__){
+						System.print("BUFFER CLEANED ON DATA ");
+						System.print(i+1);
+						System.print(". ORIGINAL VALUE ");
+						System.println(self.buffer[i+1][1]);
+					}
 					self.buffer[i+1][1]=self.buffer[i][1]+self.MaxYIncr;
 				}
 			}
@@ -151,10 +157,13 @@ class LeastSquares
 		else{out=0.0f;}
 		self.OUT = out;
 		//self.clearBuffer();
-		System.print("NEW CALC BUFFER: ");
-		System.println(self.buffer);
-		System.print("CALC VALUE: ");
-		System.println(self.OUT);
+		if (__TESTING__)
+		{
+			System.print("NEW CALC BUFFER: ");
+			System.println(self.buffer);
+			System.print("CALC VALUE: ");
+			System.println(self.OUT);
+		}
 
 	}
 
