@@ -10,7 +10,7 @@ const __MIN_DISTANCE_TO_SAMPLE__ = 20.0;	// minimum elapsed distance to include 
 const __MAX_ALT_DIFFERENCE__ = 10.0; 		// maximum altitude difference between two consecutive samples
 
 const __TESTING__ = false;
-const __TEST_STR__= "v1.1.0";
+const __TEST_STR__= "v1.2.0";
 
 class LPF
 {
@@ -83,36 +83,26 @@ class LeastSquares
 
 		if (value[0]-self.buffer[self.samples-1][0] >= self.MinXIncr)
 		{
-			// THIS APPLIES TO THE INITIAL STAGE WHERE GPS DATA CAN GIVE BIG JUMPS ON ALTITUDE VALUES
-			if ((self.MaxYIncr>0.0) and (self.buffer[self.samples-1][1]-value[1]).abs()>self.MaxYIncr){
-				if (__TESTING__){
-					System.print("BUFFER RESCALED TO VALUE ");
-					System.println(value[1]);
-				}
-				var bufferMean=0.0;
-				for( var i = 0; i < self.samples-1; i += 1 ) {
-					bufferMean=bufferMean+self.buffer[i][1];
-				}
-				bufferMean=bufferMean/self.samples;
+			self.bufferScaled=false;
 
-				for( var i = 0; i < self.samples-1; i += 1 ) {
-					self.buffer[i][1]=value[1]+(self.buffer[i][1]-bufferMean);
-				}
-				self.bufferScaled=true;
-			}else{self.bufferScaled=false;}
+			if (__TESTING__){
+				System.print("ADDED DATA TO BUFFER ");
+				System.println(value);
+			}
 
 			for( var i = 0; i < self.samples-1; i += 1 ) {
 				self.buffer[i] = self.buffer[i+1];
 			}
 			self.buffer[self.samples-1]=value;
-			if (self.SamplesInBuffer<self.samples)
-			{self.SamplesInBuffer++;}
+			if (self.SamplesInBuffer<self.samples){self.SamplesInBuffer++;}
 			else
 			{
 				self.cleanBuffer();
 				self.updateCalculus();
+				return true;
 			}
 		}
+		return false;
 	}
 
 	private function cleanBuffer(){
@@ -394,11 +384,12 @@ class SlopeView extends WatchUi.DataField {
 		if (flagGoodData){
 			// LOAD DATA TO DISPLAY
 			self.AltitudeFilterDisplay.addSample(info.altitude);
-			self.SlopeRegressionDisplay.add2Buffer([info.elapsedDistance,self.AltitudeFilterDisplay.getValue()]);
-			// PUBLISH DATA TO GARMIN CONNECT
-        	self.SlopeFilterPublish.addSample(self.SlopeRegressionDisplay.getValue()*100.0f);
-			self.mSlopeField.setData(self.SlopeFilterPublish.getValue());
-			self.mAltitudeField.setData(self.AltitudeFilterDisplay.getValue());
+			if (self.SlopeRegressionDisplay.add2Buffer([info.elapsedDistance,self.AltitudeFilterDisplay.getValue()])){
+				// PUBLISH DATA TO GARMIN CONNECT
+	        	self.SlopeFilterPublish.addSample(self.SlopeRegressionDisplay.getValue()*100.0f);
+				self.mSlopeField.setData(self.SlopeFilterPublish.getValue());
+				self.mAltitudeField.setData(self.AltitudeFilterDisplay.getValue());
+			}
         }
     }
 
@@ -420,8 +411,6 @@ class SlopeView extends WatchUi.DataField {
         } else {
             value.setColor(Graphics.COLOR_BLACK);
         }
-        //var filter_read = self.SlopeFilterPublish.getValue();
-        //value.setText(filter_read.format("%.1f")+"%");
 		var reading = self.SlopeRegressionDisplay.getValue()*100.0f;
 		value.setText(reading.format("%.1f")+"%");
 
