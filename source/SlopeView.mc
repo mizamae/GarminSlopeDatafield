@@ -71,7 +71,7 @@ class LeastSquares
 
 	 }
 
-	 function add2Buffer(value)
+	function add2Buffer(value)
 	{
 		if (self.SamplesInBuffer==0) // initialization with the first value
 		{
@@ -259,32 +259,18 @@ class SlopeView extends WatchUi.DataField {
     // the draw context is changed this will be called.
     function onLayout(dc) {
 
-//    	var obscurityFlags = DataField.getObscurityFlags();
-//
-//        // Top left quadrant so we'll use the top left layout
-//        if (obscurityFlags == (OBSCURE_TOP | OBSCURE_LEFT)) {
-//            View.setLayout(Rez.Layouts.TopLeftLayout(dc));
-//
-//        // Top right quadrant so we'll use the top right layout
-//        } else if (obscurityFlags == (OBSCURE_TOP | OBSCURE_RIGHT)) {
-//            View.setLayout(Rez.Layouts.TopRightLayout(dc));
-//
-//        // Bottom left quadrant so we'll use the bottom left layout
-//        } else if (obscurityFlags == (OBSCURE_BOTTOM | OBSCURE_LEFT)) {
-//            View.setLayout(Rez.Layouts.BottomLeftLayout(dc));
-//
-//        // Bottom right quadrant so we'll use the bottom right layout
-//        } else if (obscurityFlags == (OBSCURE_BOTTOM | OBSCURE_RIGHT)) {
-//            View.setLayout(Rez.Layouts.BottomRightLayout(dc));
-//
-//        // Use the generic, centered layout
-//        } else {
-//            View.setLayout(Rez.Layouts.MainLayout(dc));
-//        }
-        View.setLayout(Rez.Layouts.MainLayout(dc));
-        var labelView = View.findDrawableById("label");
-        var valueView = View.findDrawableById("value");
+   		var width = dc.getWidth();
+		var height = dc.getHeight();
 
+		if (height > 120){
+           View.setLayout(Rez.Layouts.BigLayout1(dc));
+       	}else if (height > 82){
+			if (width==height){View.setLayout(Rez.Layouts.MediumLayout1(dc));}
+			else {View.setLayout(Rez.Layouts.MediumLayout2(dc));}
+       	}else{View.setLayout(Rez.Layouts.SmallLayout(dc));}
+
+        var labelView = View.findDrawableById("label") as Toybox.WatchUi.Text;
+        var valueView = View.findDrawableById("value") as Toybox.WatchUi.Text;
 
 //		System.print("DC height is: ");
 //		System.println(dc.getHeight());
@@ -292,29 +278,29 @@ class SlopeView extends WatchUi.DataField {
 //		System.print("DC width is: ");
 //		System.println(dc.getWidth());
 
-		if (dc.getHeight() >= 110){
-            labelView.locY = labelView.locY - 40;
-            valueView.locY = valueView.locY + 7;
-            if (dc.getWidth() >=120){valueView.setFont(Graphics.FONT_NUMBER_HOT);}
-            else {valueView.setFont(Graphics.FONT_NUMBER_MILD);}
-        }
-        else if (dc.getHeight() >= 89){
-            labelView.locY = labelView.locY - 30;
-            valueView.locY = valueView.locY + 7;
-            valueView.setFont(Graphics.FONT_NUMBER_HOT);
-        }
-        else{
-        	labelView.locY = labelView.locY - 20;
-        	valueView.locY = valueView.locY + 20;
-        	valueView.setFont(Graphics.FONT_NUMBER_MILD);
-        }
+		// if (height >= 110){
+        //     labelView.locY = labelView.locY - 40;
+        //     valueView.locY = valueView.locY + 7;
+        //     if (height >=120){valueView.setFont(Graphics.FONT_NUMBER_HOT);}
+        //     else {valueView.setFont(Graphics.FONT_NUMBER_MILD);}
+        // }
+        // else if (height >= 89){
+        //     labelView.locY = labelView.locY - 30;
+        //     valueView.locY = valueView.locY + 7;
+        //     valueView.setFont(Graphics.FONT_NUMBER_HOT);
+        // }
+        // else{
+        // 	labelView.locY = labelView.locY - 20;
+        // 	valueView.locY = valueView.locY + 20;
+        // 	valueView.setFont(Graphics.FONT_NUMBER_MILD);
+        // }
 
 
-        View.findDrawableById("label").setText("Slope");
+        (View.findDrawableById("label") as Toybox.WatchUi.Text).setText("Slope");
         if (__TESTING__)
-        {View.findDrawableById("value").setText(__TEST_STR__);}
-        else{View.findDrawableById("value").setText("---%");}
-        return true;
+        {(View.findDrawableById("value") as Toybox.WatchUi.Text).setText(__TEST_STR__);}
+        else{(View.findDrawableById("value") as Toybox.WatchUi.Text).setText("---%");}
+        //return true;
     }
 
     // The given info object contains all the current workout information.
@@ -397,9 +383,11 @@ class SlopeView extends WatchUi.DataField {
     // once a second when the data field is visible.
     function onUpdate(dc) {
         // Set the background color
-        View.findDrawableById("Background").setColor(getBackgroundColor());
-        var value = View.findDrawableById("value");
-        var label = View.findDrawableById("label");
+        (View.findDrawableById("Background") as Toybox.WatchUi.Text).setColor(getBackgroundColor());
+        var value = View.findDrawableById("value") as Toybox.WatchUi.Text;
+        var label = View.findDrawableById("label") as Toybox.WatchUi.Text;
+		var pc = View.findDrawableById("pc") as Toybox.WatchUi.Text;
+		pc.setText("%");
 
         if (gpsQuality==NO_GPS_DATA){label.setColor(Graphics.COLOR_RED );}
         else if (gpsQuality==GPS_POOR){label.setColor(Graphics.COLOR_ORANGE );}
@@ -412,7 +400,7 @@ class SlopeView extends WatchUi.DataField {
             value.setColor(Graphics.COLOR_BLACK);
         }
 		var reading = self.SlopeRegressionDisplay.getValue()*100.0f;
-		value.setText(reading.format("%.1f")+"%");
+		value.setText(reading.format("%.1f"));
 
         // Call parent's onUpdate(dc) to redraw the layout
         View.onUpdate(dc);
