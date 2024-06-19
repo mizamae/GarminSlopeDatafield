@@ -217,9 +217,16 @@ class SlopeView extends WatchUi.DataField {
     // Field ID from resources.
 	const SLOPE_FIELD_ID = 0;
 	const ALTITUDE_FIELD_ID = 1;
+	const MAX_SLOPE_FIELD_ID = 2;
+	const MIN_SLOPE_FIELD_ID = 3;
 
 	hidden var mSlopeField;
 	hidden var mAltitudeField;
+	hidden var maxSlopeField;
+	hidden var minSlopeField;
+
+	protected var max_slope_pos;
+	protected var max_slope_neg;
 
     function initialize() {
         DataField.initialize();
@@ -238,10 +245,15 @@ class SlopeView extends WatchUi.DataField {
         flagGoodData=false;
 		flagIncompatibleDevice=false;
 
+		self.max_slope_pos = 0.0;
+		self.max_slope_neg = 0.0;
+
         // this creates the field to be exported to Garmin Connect
         self.mSlopeField = createField("current_slope", SLOPE_FIELD_ID, FitContributor.DATA_TYPE_FLOAT, { :mesgType=>FitContributor.MESG_TYPE_RECORD, :units=>"%" });
         self.mAltitudeField = createField("filtered_altitude", ALTITUDE_FIELD_ID, FitContributor.DATA_TYPE_FLOAT, { :mesgType=>FitContributor.MESG_TYPE_RECORD, :units=>"m" });
-    }
+		self.maxSlopeField = createField("max_slope", MAX_SLOPE_FIELD_ID, FitContributor.DATA_TYPE_FLOAT, { :mesgType=>FitContributor.MESG_TYPE_SESSION, :units=>"%" });
+		self.minSlopeField = createField("min_slope", MIN_SLOPE_FIELD_ID, FitContributor.DATA_TYPE_FLOAT, { :mesgType=>FitContributor.MESG_TYPE_SESSION, :units=>"%" });
+	}
 
 	function getParameter(paramName, defaultValue)
 	{
@@ -375,6 +387,16 @@ class SlopeView extends WatchUi.DataField {
 	        	self.SlopeFilterPublish.addSample(self.SlopeRegressionDisplay.getValue()*100.0f);
 				self.mSlopeField.setData(self.SlopeFilterPublish.getValue());
 				self.mAltitudeField.setData(self.AltitudeFilterDisplay.getValue());
+				if (self.SlopeFilterPublish.getValue() > self.max_slope_pos)
+				{
+					self.max_slope_pos = self.SlopeFilterPublish.getValue();
+					self.maxSlopeField.setData(self.max_slope_pos);
+				}
+				if (self.SlopeFilterPublish.getValue() < self.max_slope_neg)
+				{
+					self.max_slope_neg = self.SlopeFilterPublish.getValue();
+					self.minSlopeField.setData(self.max_slope_neg);
+				}
 			}
         }
     }
@@ -396,8 +418,10 @@ class SlopeView extends WatchUi.DataField {
         // Set the foreground color
 		if (getBackgroundColor() == Graphics.COLOR_BLACK) {
             value.setColor(Graphics.COLOR_WHITE);
+			pc.setColor(Graphics.COLOR_WHITE);
         } else {
             value.setColor(Graphics.COLOR_BLACK);
+			pc.setColor(Graphics.COLOR_BLACK);
         }
 		var reading = self.SlopeRegressionDisplay.getValue()*100.0f;
 		value.setText(reading.format("%.1f"));

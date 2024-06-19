@@ -6,6 +6,8 @@
     <string id="LSREGRESSION_SAMPLES">Number of samples to estimate the slope tendency</string>
     <string id="ALTITUDE_FILTER_COEFF">Coefficient to filter the altitude data from GPS [0-99%]</string>
     
+	<string id="max_slope_label">Max pos slope [%]</string>
+	<string id="min_slope_label">Max neg slope [%]</string>
 	<string id="slope_label">Slope [%]</string>
 	<string id="slope_graph_label">Slope</string>
 	<string id="slope_units">%</string>

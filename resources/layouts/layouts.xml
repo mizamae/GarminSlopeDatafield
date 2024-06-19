@@ -6,14 +6,14 @@
         <drawable class="Background" />
         <label id="label" x="center" y="15%" color="Graphics.COLOR_BLACK" justification="Graphics.TEXT_JUSTIFY_CENTER" font="Graphics.FONT_TINY" />
         <label id="value" x="center" y="center" color="Graphics.COLOR_BLACK" justification="Graphics.TEXT_JUSTIFY_CENTER" font="Graphics.FONT_NUMBER_THAI_HOT" />
-        <label id="pc" x="75%" y="center" color="Graphics.COLOR_BLACK" justification="Graphics.TEXT_JUSTIFY_CENTER" font="Graphics.FONT_TINY" />
+        <label id="pc" x="90%" y="center" color="Graphics.COLOR_BLACK" justification="Graphics.TEXT_JUSTIFY_CENTER" font="Graphics.FONT_TINY" />
     </layout>
     <layout id="MediumLayout2">
         <!-- MEdium layout for rectangle shapes -->
         <drawable class="Background" />
         <label id="label" x="center" y="5%" color="Graphics.COLOR_BLACK" justification="Graphics.TEXT_JUSTIFY_CENTER" font="Graphics.FONT_GLANCE" />
         <label id="value" x="center" y="20%" color="Graphics.COLOR_BLACK" justification="Graphics.TEXT_JUSTIFY_CENTER" font="Graphics.FONT_NUMBER_HOT" />
-        <label id="pc" x="75%" y="30%" color="Graphics.COLOR_BLACK" justification="Graphics.TEXT_JUSTIFY_CENTER" font="Graphics.FONT_TINY" />
+        <label id="pc" x="75%" y="30%" color="Graphics.COLOR_BLACK" justification="Graphics.TEXT_JUSTIFY_CENTER" font="Graphics.FONT_XTINY" />
     </layout>
     
     <layout id="MediumLayout1">
@@ -21,13 +21,13 @@
         <drawable class="Background" />
         <label id="label" x="center" y="5%" color="Graphics.COLOR_BLACK" justification="Graphics.TEXT_JUSTIFY_CENTER" font="Graphics.FONT_GLANCE" />
         <label id="value" x="center" y="center" color="Graphics.COLOR_BLACK" justification="Graphics.TEXT_JUSTIFY_CENTER" font="Graphics.FONT_NUMBER_MEDIUM" />
-        <label id="pc" x="85%" y="30%" color="Graphics.COLOR_BLACK" justification="Graphics.TEXT_JUSTIFY_CENTER" font="Graphics.FONT_TINY" />
+        <label id="pc" x="85%" y="30%" color="Graphics.COLOR_BLACK" justification="Graphics.TEXT_JUSTIFY_CENTER" font="Graphics.FONT_XTINY" />
     </layout>
 
     <layout id="SmallLayout">
         <drawable class="Background" />
         <label id="label" x="center" y="5%" color="Graphics.COLOR_BLACK" justification="Graphics.TEXT_JUSTIFY_CENTER" font="Graphics.FONT_GLANCE" />
         <label id="value" x="center" y="40%" color="Graphics.COLOR_BLACK" justification="Graphics.TEXT_JUSTIFY_CENTER" font="Graphics.FONT_NUMBER_MILD" />
-        <label id="pc" x="75%" y="40%" color="Graphics.COLOR_BLACK" justification="Graphics.TEXT_JUSTIFY_CENTER" font="Graphics.FONT_TINY" />
+        <label id="pc" x="65%" y="40%" color="Graphics.COLOR_BLACK" justification="Graphics.TEXT_JUSTIFY_CENTER" font="Graphics.FONT_XTINY" />
     </layout>
 </layouts>

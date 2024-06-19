@@ -5,4 +5,8 @@
 	<fitField id="1" displayInChart="true" sortOrder = "1" precision="1"
 	chartTitle="@Strings.altitude_graph_label" dataLabel="@Strings.altitude_label"
 	unitLabel="@Strings.altitude_units" fillColor="#00FF00" />
+	<fitField id="2" displayInChart="false" sortOrder = "2" precision="1"
+	dataLabel="@Strings.max_slope_label" unitLabel="@Strings.slope_units"  />
+	<fitField id="3" displayInChart="false" sortOrder = "3" precision="1"
+	dataLabel="@Strings.min_slope_label" unitLabel="@Strings.slope_units"  />
 </fitContributions>
