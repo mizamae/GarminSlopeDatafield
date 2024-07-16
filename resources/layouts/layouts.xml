@@ -2,17 +2,24 @@
     
 
     <layout id="BigLayout1">
-        <!-- Big layout  -->
+        <!-- Big layout for single and dual pages -->
         <drawable class="Background" />
-        <label id="label" x="center" y="15%" color="Graphics.COLOR_BLACK" justification="Graphics.TEXT_JUSTIFY_CENTER" font="Graphics.FONT_TINY" />
+        <label id="label" x="center" y="10%" color="Graphics.COLOR_BLACK" justification="Graphics.TEXT_JUSTIFY_CENTER" font="Graphics.FONT_TINY" />
         <label id="value" x="center" y="center" color="Graphics.COLOR_BLACK" justification="Graphics.TEXT_JUSTIFY_CENTER" font="Graphics.FONT_NUMBER_THAI_HOT" />
-        <label id="pc" x="90%" y="center" color="Graphics.COLOR_BLACK" justification="Graphics.TEXT_JUSTIFY_CENTER" font="Graphics.FONT_TINY" />
+        <label id="pc" x="80%" y="center" color="Graphics.COLOR_BLACK" justification="Graphics.TEXT_JUSTIFY_CENTER" font="Graphics.FONT_TINY" />
+    </layout>
+    <layout id="BigLayout2">
+        <!-- Big layout for triple pages stacked -->
+        <drawable class="Background" />
+        <label id="label" x="center" y="10%" color="Graphics.COLOR_BLACK" justification="Graphics.TEXT_JUSTIFY_CENTER" font="Graphics.FONT_TINY" />
+        <label id="value" x="center" y="20%" color="Graphics.COLOR_BLACK" justification="Graphics.TEXT_JUSTIFY_CENTER" font="Graphics.FONT_NUMBER_HOT" />
+        <label id="pc" x="80%" y="center" color="Graphics.COLOR_BLACK" justification="Graphics.TEXT_JUSTIFY_CENTER" font="Graphics.FONT_TINY" />
     </layout>
     <layout id="MediumLayout2">
         <!-- MEdium layout for rectangle shapes -->
         <drawable class="Background" />
         <label id="label" x="center" y="5%" color="Graphics.COLOR_BLACK" justification="Graphics.TEXT_JUSTIFY_CENTER" font="Graphics.FONT_GLANCE" />
-        <label id="value" x="center" y="20%" color="Graphics.COLOR_BLACK" justification="Graphics.TEXT_JUSTIFY_CENTER" font="Graphics.FONT_NUMBER_HOT" />
+        <label id="value" x="center" y="8%" color="Graphics.COLOR_BLACK" justification="Graphics.TEXT_JUSTIFY_CENTER" font="Graphics.FONT_NUMBER_HOT" />
         <label id="pc" x="75%" y="30%" color="Graphics.COLOR_BLACK" justification="Graphics.TEXT_JUSTIFY_CENTER" font="Graphics.FONT_XTINY" />
     </layout>
     
@@ -27,7 +34,13 @@
     <layout id="SmallLayout">
         <drawable class="Background" />
         <label id="label" x="center" y="5%" color="Graphics.COLOR_BLACK" justification="Graphics.TEXT_JUSTIFY_CENTER" font="Graphics.FONT_GLANCE" />
-        <label id="value" x="center" y="40%" color="Graphics.COLOR_BLACK" justification="Graphics.TEXT_JUSTIFY_CENTER" font="Graphics.FONT_NUMBER_MILD" />
+        <label id="value" x="center" y="30%" color="Graphics.COLOR_BLACK" justification="Graphics.TEXT_JUSTIFY_CENTER" font="Graphics.FONT_NUMBER_MILD" />
+        <label id="pc" x="75%" y="40%" color="Graphics.COLOR_BLACK" justification="Graphics.TEXT_JUSTIFY_CENTER" font="Graphics.FONT_XTINY" />
+    </layout>
+    <layout id="MicroLayout">
+        <drawable class="Background" />
+        <label id="label" x="center" y="5%" color="Graphics.COLOR_BLACK" justification="Graphics.TEXT_JUSTIFY_CENTER" font="Graphics.FONT_XTINY" />
+        <label id="value" x="center" y="36%" color="Graphics.COLOR_BLACK" justification="Graphics.TEXT_JUSTIFY_CENTER" font="Graphics.FONT_GLANCE_NUMBER" />
         <label id="pc" x="65%" y="40%" color="Graphics.COLOR_BLACK" justification="Graphics.TEXT_JUSTIFY_CENTER" font="Graphics.FONT_XTINY" />
     </layout>
 </layouts>

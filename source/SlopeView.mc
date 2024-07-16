@@ -10,7 +10,7 @@ const __MIN_DISTANCE_TO_SAMPLE__ = 20.0;	// minimum elapsed distance to include 
 const __MAX_ALT_DIFFERENCE__ = 10.0; 		// maximum altitude difference between two consecutive samples
 
 const __TESTING__ = false;
-const __TEST_STR__= "v1.2.0";
+const __TEST_STR__= "20.5";
 
 class LPF
 {
@@ -273,39 +273,31 @@ class SlopeView extends WatchUi.DataField {
 
    		var width = dc.getWidth();
 		var height = dc.getHeight();
+		//var font = WatchUi.loadResource(Rez.Fonts.customFont);
 
-		if (height > 120){
+		if (height > 250){
            View.setLayout(Rez.Layouts.BigLayout1(dc));
+       	}else if (height > 120){
+			if (width==height){View.setLayout(Rez.Layouts.MediumLayout1(dc));}
+			else {View.setLayout(Rez.Layouts.BigLayout2(dc));}
        	}else if (height > 82){
 			if (width==height){View.setLayout(Rez.Layouts.MediumLayout1(dc));}
 			else {View.setLayout(Rez.Layouts.MediumLayout2(dc));}
-       	}else{View.setLayout(Rez.Layouts.SmallLayout(dc));}
+       	}else if (height > 69){View.setLayout(Rez.Layouts.SmallLayout(dc));}
+		else {View.setLayout(Rez.Layouts.MicroLayout(dc));}
 
         var labelView = View.findDrawableById("label") as Toybox.WatchUi.Text;
         var valueView = View.findDrawableById("value") as Toybox.WatchUi.Text;
 
-//		System.print("DC height is: ");
-//		System.println(dc.getHeight());
-//
-//		System.print("DC width is: ");
-//		System.println(dc.getWidth());
+		if (__TESTING__)
+		{
+			System.print("DC height is: ");
+			System.println(dc.getHeight());
 
-		// if (height >= 110){
-        //     labelView.locY = labelView.locY - 40;
-        //     valueView.locY = valueView.locY + 7;
-        //     if (height >=120){valueView.setFont(Graphics.FONT_NUMBER_HOT);}
-        //     else {valueView.setFont(Graphics.FONT_NUMBER_MILD);}
-        // }
-        // else if (height >= 89){
-        //     labelView.locY = labelView.locY - 30;
-        //     valueView.locY = valueView.locY + 7;
-        //     valueView.setFont(Graphics.FONT_NUMBER_HOT);
-        // }
-        // else{
-        // 	labelView.locY = labelView.locY - 20;
-        // 	valueView.locY = valueView.locY + 20;
-        // 	valueView.setFont(Graphics.FONT_NUMBER_MILD);
-        // }
+			System.print("DC width is: ");
+			System.println(dc.getWidth());
+		}
+
 
 
         (View.findDrawableById("label") as Toybox.WatchUi.Text).setText("Slope");
