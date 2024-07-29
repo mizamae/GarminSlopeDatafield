@@ -275,7 +275,7 @@ class SlopeView extends WatchUi.DataField {
 		var height = dc.getHeight();
 		//var font = WatchUi.loadResource(Rez.Fonts.customFont);
 
-		if (height > 250){
+		if (height >= 240){
            View.setLayout(Rez.Layouts.BigLayout1(dc));
        	}else if (height > 120){
 			if (width==height){View.setLayout(Rez.Layouts.MediumLayout1(dc));}
