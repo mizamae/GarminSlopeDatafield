@@ -6,8 +6,8 @@ using Toybox.Position;
 
 const __NUMSAMPLES_AVGFILT__	=	5;
 const __NUMSAMPLES_LSREG__	=	5;
-const __MIN_DISTANCE_TO_SAMPLE__ = 20.0;	// minimum elapsed distance to include data in regressor
-const __MAX_ALT_DIFFERENCE__ = 10.0; 		// maximum altitude difference between two consecutive samples
+const __MIN_DISTANCE_TO_SAMPLE__ = 5.0;	// minimum elapsed distance to include data in regressor
+const __MAX_ALT_DIFFERENCE__ = 2.5; 		// maximum altitude difference between two consecutive samples
 
 const __TESTING__ = false;
 const __TEST_STR__= "20.5";
