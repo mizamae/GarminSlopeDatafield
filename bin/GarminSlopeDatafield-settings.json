@@ -1,1 +1,74 @@
-{"settings":[{"key":"LSREGRESSION_SAMPLES","valueType":"number","defaultValue":5,"configTitle":"LSREGRESSION_SAMPLES","configPrompt":null,"configType":"numeric","configError":null,"configHelpUrl":null,"configReadonly":false,"configRequired":false,"configOptions":null,"configMin":2,"configMax":50,"configMaxLength":null},{"key":"ALTITUDE_FILTER_COEFF","valueType":"number","defaultValue":60,"configTitle":"ALTITUDE_FILTER_COEFF","configPrompt":null,"configType":"numeric","configError":null,"configHelpUrl":null,"configReadonly":false,"configRequired":false,"configOptions":null,"configMin":0,"configMax":99,"configMaxLength":null}],"supportsLiveValidation":false,"languages":{"valyrian":{"slope_graph_label":"Slope","max_slope_label":"Max pos slope [%]","ALTITUDE_FILTER_COEFF":"Coefficient to filter the altitude data from GPS [0-99%]","altitude_units":"m","min_slope_label":"Max neg slope [%]","slope_units":"%","altitude_label":"Altitude filtered [m]","label":"My Value","altitude_graph_label":"Altitude filtered","AppName":"Slope","LSREGRESSION_SAMPLES":"Number of samples to estimate the slope tendency","slope_label":"Slope [%]"}}}
+{
+  "settings" : [ {
+    "key" : "LSREGRESSION_SAMPLES",
+    "valueType" : "number",
+    "defaultValue" : 3,
+    "configTitle" : "LSREGRESSION_SAMPLES",
+    "configPrompt" : null,
+    "configType" : "numeric",
+    "configError" : null,
+    "configHelpUrl" : null,
+    "configReadonly" : false,
+    "configRequired" : false,
+    "configOptions" : null,
+    "configMin" : 2,
+    "configMax" : 50,
+    "configMaxLength" : null
+  }, {
+    "key" : "ALTITUDE_FILTER_COEFF",
+    "valueType" : "number",
+    "defaultValue" : 10,
+    "configTitle" : "ALTITUDE_FILTER_COEFF",
+    "configPrompt" : null,
+    "configType" : "numeric",
+    "configError" : null,
+    "configHelpUrl" : null,
+    "configReadonly" : false,
+    "configRequired" : false,
+    "configOptions" : null,
+    "configMin" : 0,
+    "configMax" : 99,
+    "configMaxLength" : null
+  }, {
+    "key" : "RISE_CALCULATION",
+    "valueType" : "number",
+    "defaultValue" : 1,
+    "configTitle" : "RISE_CALCULATION",
+    "configPrompt" : null,
+    "configType" : "list",
+    "configError" : null,
+    "configHelpUrl" : null,
+    "configReadonly" : false,
+    "configRequired" : false,
+    "configOptions" : [ {
+      "display" : "SlopePC",
+      "value" : 0
+    }, {
+      "display" : "SlopeDEG",
+      "value" : 1
+    } ],
+    "configMin" : null,
+    "configMax" : null,
+    "configMaxLength" : null
+  } ],
+  "supportsLiveValidation" : false,
+  "languages" : {
+    "valyrian" : {
+      "slope_graph_label" : "Slope",
+      "max_slope_label" : "Max pos slope [%]",
+      "ALTITUDE_FILTER_COEFF" : "Coefficient to filter the altitude data from GPS [0-99%]",
+      "altitude_units" : "m",
+      "min_slope_label" : "Max neg slope [%]",
+      "slope_units" : "%",
+      "altitude_label" : "Altitude filtered [m]",
+      "label" : "My Value",
+      "altitude_graph_label" : "Altitude filtered",
+      "AppName" : "Slope",
+      "LSREGRESSION_SAMPLES" : "Number of samples to estimate the slope tendency",
+      "slope_label" : "Slope [%]",
+      "RISE_CALCULATION" : "Select the slope calculation",
+      "SlopeDEG" : "Degrees [º]",
+      "SlopePC" : "Percentage [%]"
+    }
+  }
+}

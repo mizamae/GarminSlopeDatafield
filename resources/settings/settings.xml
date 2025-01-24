@@ -8,11 +8,11 @@
     	<settingConfig type="numeric" min="0" max="99" />
 	</setting>
 	
-<!-- 	<setting propertyKey="@Properties.RISE_CALCULATION" title="@Strings.RISE_CALCULATION"> -->
-<!-- 		<settingConfig type="list"> -->
-<!-- 			<listEntry value="0">@Strings.Rise0</listEntry> -->
-<!-- 			<listEntry value="1">@Strings.Rise1</listEntry> -->
-<!-- 		</settingConfig> -->
-<!-- 	</setting> -->
+	<setting propertyKey="@Properties.RISE_CALCULATION" title="@Strings.RISE_CALCULATION">
+		<settingConfig type="list">
+ 			<listEntry value="0">@Strings.SlopePC</listEntry>
+ 			<listEntry value="1">@Strings.SlopeDEG</listEntry>
+ 		</settingConfig>
+ 	</setting>
 
 </settings>

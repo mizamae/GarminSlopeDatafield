@@ -1,4 +1,5 @@
 <properties>
+	<property id="RISE_CALCULATION" type="number">1</property>
 	<property id="LSREGRESSION_SAMPLES" type="number">3</property>
 	<property id="ALTITUDE_FILTER_COEFF" type="number">10</property>
 </properties>

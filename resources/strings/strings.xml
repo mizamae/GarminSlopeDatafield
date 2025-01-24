@@ -3,6 +3,9 @@
 
     <string id="label">My Value</string>
     
+	<string id="RISE_CALCULATION">Select the slope calculation</string>
+	<string id="SlopePC">Percentage [%]</string>
+	<string id="SlopeDEG">Degrees [º]</string>
     <string id="LSREGRESSION_SAMPLES">Number of samples to estimate the slope tendency</string>
     <string id="ALTITUDE_FILTER_COEFF">Coefficient to filter the altitude data from GPS [0-99%]</string>
     

@@ -3,6 +3,7 @@ using Toybox.Graphics;
 using Toybox.Math;
 using Toybox.FitContributor;
 using Toybox.Position;
+using Toybox.Application.Properties;
 
 const __NUMSAMPLES_AVGFILT__	=	5;
 const __NUMSAMPLES_LSREG__	=	5;
@@ -215,8 +216,8 @@ class SlopeView extends WatchUi.DataField {
     	GPS_GOOD
     }
     // Field ID from resources.
-	const SLOPE_FIELD_ID = 0;
-	const ALTITUDE_FIELD_ID = 1;
+	const ALTITUDE_FIELD_ID = 0;
+	const SLOPE_FIELD_ID = 1;
 	const MAX_SLOPE_FIELD_ID = 2;
 	const MIN_SLOPE_FIELD_ID = 3;
 
@@ -230,6 +231,18 @@ class SlopeView extends WatchUi.DataField {
 
     function initialize() {
         DataField.initialize();
+
+		// this creates the field to be exported to Garmin Connect
+		self.mAltitudeField = createField("filtered_altitude", ALTITUDE_FIELD_ID, FitContributor.DATA_TYPE_FLOAT, { :mesgType=>FitContributor.MESG_TYPE_RECORD, :units=>"m" });
+		if (Properties.getValue("RISE_CALCULATION")==0){ // percentage
+			self.mSlopeField = createField("current_slope", SLOPE_FIELD_ID, FitContributor.DATA_TYPE_FLOAT, { :mesgType=>FitContributor.MESG_TYPE_RECORD, :units=>"%" });
+			self.maxSlopeField = createField("max_slope", MAX_SLOPE_FIELD_ID, FitContributor.DATA_TYPE_FLOAT, { :mesgType=>FitContributor.MESG_TYPE_SESSION, :units=>"%" });
+			self.minSlopeField = createField("min_slope", MIN_SLOPE_FIELD_ID, FitContributor.DATA_TYPE_FLOAT, { :mesgType=>FitContributor.MESG_TYPE_SESSION, :units=>"%" });
+		} else if (Properties.getValue("RISE_CALCULATION")==1){ // degrees
+			self.mSlopeField = createField("current_slope", SLOPE_FIELD_ID, FitContributor.DATA_TYPE_FLOAT, { :mesgType=>FitContributor.MESG_TYPE_RECORD, :units=>"º" });
+			self.maxSlopeField = createField("max_slope", MAX_SLOPE_FIELD_ID, FitContributor.DATA_TYPE_FLOAT, { :mesgType=>FitContributor.MESG_TYPE_SESSION, :units=>"º" });
+			self.minSlopeField = createField("min_slope", MIN_SLOPE_FIELD_ID, FitContributor.DATA_TYPE_FLOAT, { :mesgType=>FitContributor.MESG_TYPE_SESSION, :units=>"º" });
+		}
 
 		self.prevElapsedDistance=0.0f;
 
@@ -247,12 +260,7 @@ class SlopeView extends WatchUi.DataField {
 
 		self.max_slope_pos = 0.0;
 		self.max_slope_neg = 0.0;
-
-        // this creates the field to be exported to Garmin Connect
-        self.mSlopeField = createField("current_slope", SLOPE_FIELD_ID, FitContributor.DATA_TYPE_FLOAT, { :mesgType=>FitContributor.MESG_TYPE_RECORD, :units=>"%" });
-        self.mAltitudeField = createField("filtered_altitude", ALTITUDE_FIELD_ID, FitContributor.DATA_TYPE_FLOAT, { :mesgType=>FitContributor.MESG_TYPE_RECORD, :units=>"m" });
-		self.maxSlopeField = createField("max_slope", MAX_SLOPE_FIELD_ID, FitContributor.DATA_TYPE_FLOAT, { :mesgType=>FitContributor.MESG_TYPE_SESSION, :units=>"%" });
-		self.minSlopeField = createField("min_slope", MIN_SLOPE_FIELD_ID, FitContributor.DATA_TYPE_FLOAT, { :mesgType=>FitContributor.MESG_TYPE_SESSION, :units=>"%" });
+		
 	}
 
 	function getParameter(paramName, defaultValue)
@@ -274,6 +282,12 @@ class SlopeView extends WatchUi.DataField {
    		var width = dc.getWidth();
 		var height = dc.getHeight();
 		//var font = WatchUi.loadResource(Rez.Fonts.customFont);
+		var obsc = getObscurityFlags();
+
+		var obs_LEFT = obsc & 1<0;
+		var obs_TOP = obsc & 1<1;
+		var obs_RIGHT = obsc & 1<2;
+		var obs_BOTT = obsc & 1<4;
 
 		if (height >= 240){
            View.setLayout(Rez.Layouts.BigLayout1(dc));
@@ -376,7 +390,13 @@ class SlopeView extends WatchUi.DataField {
 			self.AltitudeFilterDisplay.addSample(info.altitude);
 			if (self.SlopeRegressionDisplay.add2Buffer([info.elapsedDistance,self.AltitudeFilterDisplay.getValue()])){
 				// PUBLISH DATA TO GARMIN CONNECT
-	        	self.SlopeFilterPublish.addSample(self.SlopeRegressionDisplay.getValue()*100.0f);
+				var reading = self.SlopeRegressionDisplay.getValue();
+				if (Properties.getValue("RISE_CALCULATION")==0){ // percentage
+					reading *=100.0f;
+				} else if (Properties.getValue("RISE_CALCULATION")==1){ // degrees
+					reading = Math.atan(reading)*57.0;
+				}
+	        	self.SlopeFilterPublish.addSample(reading);
 				self.mSlopeField.setData(self.SlopeFilterPublish.getValue());
 				self.mAltitudeField.setData(self.AltitudeFilterDisplay.getValue());
 				if (self.SlopeFilterPublish.getValue() > self.max_slope_pos)
@@ -401,7 +421,14 @@ class SlopeView extends WatchUi.DataField {
         var value = View.findDrawableById("value") as Toybox.WatchUi.Text;
         var label = View.findDrawableById("label") as Toybox.WatchUi.Text;
 		var pc = View.findDrawableById("pc") as Toybox.WatchUi.Text;
-		pc.setText("%");
+
+		if (Properties.getValue("RISE_CALCULATION")==0){
+			pc.setText("%");
+		} else if (Properties.getValue("RISE_CALCULATION")==1){
+			//var view = View.findDrawableById("pc");
+			//view.setLocation(view.locX, 100);
+			pc.setText("º");
+		}
 
         if (gpsQuality==NO_GPS_DATA){label.setColor(Graphics.COLOR_RED );}
         else if (gpsQuality==GPS_POOR){label.setColor(Graphics.COLOR_ORANGE );}
@@ -415,7 +442,14 @@ class SlopeView extends WatchUi.DataField {
             value.setColor(Graphics.COLOR_BLACK);
 			pc.setColor(Graphics.COLOR_BLACK);
         }
-		var reading = self.SlopeRegressionDisplay.getValue()*100.0f;
+		var reading = self.SlopeRegressionDisplay.getValue();
+
+		if (Properties.getValue("RISE_CALCULATION")==0){ // percentage
+			reading *=100.0f;
+			
+		} else if (Properties.getValue("RISE_CALCULATION")==1){ // degrees
+			reading = Math.atan(reading)*57.0;
+		}
 		value.setText(reading.format("%.1f"));
 
         // Call parent's onUpdate(dc) to redraw the layout
