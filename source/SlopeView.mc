@@ -216,8 +216,8 @@ class SlopeView extends WatchUi.DataField {
     	GPS_GOOD
     }
     // Field ID from resources.
-	const ALTITUDE_FIELD_ID = 0;
-	const SLOPE_FIELD_ID = 1;
+	const ALTITUDE_FIELD_ID = 1;
+	const SLOPE_FIELD_ID = 0;
 	const MAX_SLOPE_FIELD_ID = 2;
 	const MIN_SLOPE_FIELD_ID = 3;
 
